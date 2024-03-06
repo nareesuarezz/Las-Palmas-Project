@@ -3,7 +3,7 @@
     position: absolute;
     top: 10px;
     right: 10px;
-    font-size: 30px;
+    font-size: 40px;
     z-index: 1;
   }
   nav {
@@ -11,6 +11,7 @@
   }
   nav.open {
     display: block;
+    background-color: white;
     display: flex;
     flex-direction: column;
     box-shadow: 0px 10px 10px 10px black;
@@ -18,7 +19,7 @@
     top: 10px;
     right: 10px;
     padding-left: 70px;
-    padding-top: 20px;
+    padding-top: 40px;
     height: 90vh;
   }
   nav.open ul {
@@ -28,6 +29,8 @@
     display: flex;
     justify-content: flex-end;
     margin-right: 5px;
+    margin-bottom: 10px;
+    font-size: 25px;
   }
   nav.open ul li a {
     text-decoration: none;
