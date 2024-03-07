@@ -2,7 +2,9 @@ import React from "react";
 import { NavBar } from "../../Components/Navbar/navbar";
 import { IoIosArrowBack } from "react-icons/io";
 import { NavLink } from "react-router-dom";
-export const Book = () => {
+import "./Chat.scss";
+
+export const Chat = () => {
   return (
     <>
       <div className="top">
