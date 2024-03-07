@@ -10,6 +10,7 @@ import { Book } from "./Pages/Book/book";
 import { Map } from "./Pages/Map/Map";
 import { Chat } from "./Pages/Chat/Chat";
 import { Profile } from "./Pages/Profile/Profile";
+import { Authentication } from "./Components/Auth/auth";
 function App() {
   return (
     <>
@@ -25,6 +26,7 @@ function App() {
         <Route path="/Map" element={<Map />} />
         <Route path="/Chat" element={<Chat />} />
         <Route path="/Profile" element={<Profile />} />
+        <Route path="/Auth" element={<Authentication />} />
       </Routes>
     </>
   );

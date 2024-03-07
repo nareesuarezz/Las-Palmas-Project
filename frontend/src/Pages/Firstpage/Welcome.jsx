@@ -4,8 +4,18 @@ import { DiChrome } from "react-icons/di";
 import { FaFacebook } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
+import { createClient } from '@supabase/supabase-js'
 
 import "./Welcome.scss";
+import { Button } from "@supabase/ui";
+
+const supabase = createClient('https://gdovlzckdjkuudotrxob.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdkb3ZsemNrZGprdXVkb3RyeG9iIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDk3MTQ2NTEsImV4cCI6MjAyNTI5MDY1MX0.hgVrFsLYyVwnggB1eJ9oNPcm1wfZPW3ENpwxuZyFFp8')
+
+async function signInWithFacebook() {
+  const { data, error } = await supabase.auth.signInWithOAuth({
+    provider: 'facebook',
+  })
+}
 
 export const Welcome = () => {
   return (
@@ -22,15 +32,15 @@ export const Welcome = () => {
           <br /> choose an option below to sign in
         </p>
         <article className="madeLogin">
-          <NavLink className="link" to="/Chrome">
+          <Button className="link" to="/Chrome">
             <DiChrome className="icon" /> Continue with Email
-          </NavLink>
-          <NavLink className="link" to="/Facebook">
+          </Button>
+            <Button className="link" onClick={signInWithFacebook}>
             <FaFacebook className="icon" /> Continue with Faceboox
-          </NavLink>
-          <NavLink className="link" to="/Apple">
+            </Button>
+          <Button className="link" to="/Apple">
             <DiApple className="icon" /> Continue with Apple ID
-          </NavLink>
+          </Button>
           <NavLink to="/Create" className="create">
             Create Account
           </NavLink>
