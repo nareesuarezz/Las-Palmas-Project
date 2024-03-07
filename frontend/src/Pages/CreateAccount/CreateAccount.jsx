@@ -21,24 +21,6 @@ export const CreateAccount = () => {
           <form>
             <div>
               <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="Email"
-                required
-              ></input>
-            </div>
-            <div>
-              <input
-                type="password"
-                id="password"
-                name="password"
-                required
-                placeholder="Password"
-              ></input>
-            </div>
-            <div>
-              <input
                 type="text"
                 id="name"
                 name="name"
@@ -75,24 +57,8 @@ export const CreateAccount = () => {
             <button type="submit">Submit</button>
           </form>
         </article>
-        <Auth
-    supabaseClient={supabase}
-    appearance={{
-      style: {
-        button: { width: '220px',
-          height: '30px',
-          borderRadius: '5px', },
-        anchor: { color: 'blue' },
-        input: {width: '280px',
-          height: '30px',
-          padding: '20px',
-          border: 'none',
-          background: '#d5d5d5',
-          borderRadius: '5px'}
-        //..
-      },
-    }}
-  />
+        
+
       </section>
     </>
   );

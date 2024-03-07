@@ -41,7 +41,7 @@ export const Welcome = () => {
           <Button className="link" to="/Apple">
             <DiApple className="icon" /> Continue with Apple ID
           </Button>
-          <NavLink to="/Create" className="create">
+          <NavLink to="/Auth" className="create">
             Create Account
           </NavLink>
         </article>
