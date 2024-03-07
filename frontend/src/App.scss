@@ -3,7 +3,14 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+.top {
+  height: 90px;
+  border-bottom: 1px solid black;
+  display: flex;
+  align-items: center;
+  font-size: 30px;
+  padding: 5px;
+}
 .backRound {
   position: fixed;
   bottom: 0;
