@@ -23,6 +23,9 @@ h1 {
   background-color: white;
   color: black;
 }
+.top .icon {
+  color: black;
+}
 
 .backRound {
   position: fixed;

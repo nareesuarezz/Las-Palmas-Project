@@ -11,7 +11,7 @@ export const Welcome = () => {
   return (
     <>
       <div className="top">
-        <NavLink to="/">
+        <NavLink to="/Policy">
           <IoIosArrowBack className="icon" />
         </NavLink>
       </div>
