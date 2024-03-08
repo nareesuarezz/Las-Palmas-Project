@@ -2,7 +2,6 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
 import { createClient } from '@supabase/supabase-js'
-import { Auth } from '@supabase/auth-ui-react'
 import "./CreateAccount.scss";
 
 const supabase = createClient('https://gdovlzckdjkuudotrxob.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdkb3ZsemNrZGprdXVkb3RyeG9iIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDk3MTQ2NTEsImV4cCI6MjAyNTI5MDY1MX0.hgVrFsLYyVwnggB1eJ9oNPcm1wfZPW3ENpwxuZyFFp8')
@@ -51,7 +50,7 @@ export const CreateAccount = () => {
                 type="text"
                 id="Message"
                 name="message"
-                placeholder="Descriptsion"
+                placeholder="Description"
               ></input>
             </div>
             <button type="submit">Submit</button>

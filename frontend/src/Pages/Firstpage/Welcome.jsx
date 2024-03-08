@@ -42,7 +42,7 @@ export const Welcome = () => {
             <DiApple className="icon" /> Continue with Apple ID
           </Button>
           <NavLink to="/Auth" className="create">
-            Create Account
+            Create Account or Login
           </NavLink>
         </article>
       </section>
