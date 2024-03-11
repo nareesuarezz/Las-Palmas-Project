@@ -3,11 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 h1 {
   margin-top: 150px;
 }
-
 .top {
   height: 90px;
   width: 100%;
@@ -22,11 +20,10 @@ h1 {
   z-index: 0;
   background-color: white;
   color: black;
+  .icon {
+    color: black;
+  }
 }
-.top .icon {
-  color: black;
-}
-
 .backRound {
   position: fixed;
   bottom: 0;
@@ -38,4 +35,4 @@ h1 {
   background-position: center;
   background-repeat: no-repeat;
   /* Add other background properties as needed */
-}/*# sourceMappingURL=App.css.map */
+}

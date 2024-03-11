@@ -1,0 +1,51 @@
+.top {
+  height: 90px;
+  border-bottom: 1px solid black;
+  display: flex;
+  align-items: center;
+  font-size: 30px;
+  padding: 5px;
+}
+
+.Welcome {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.Welcome h1 {
+  font-size: 45px;
+  margin-top: 150px;
+  margin-bottom: 50px;
+}
+.Welcome h1 p {
+  font-size: 25px;
+}
+.Welcome .madeLogin {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: start;
+  height: 111px;
+  margin-top: 240px;
+}
+.Welcome .madeLogin .create {
+  color: black;
+  padding: 5px;
+}
+.Welcome .madeLogin .link {
+  width: 300px;
+  display: flex;
+  align-items: center;
+  background-color: #d9d9d9;
+  text-decoration: none;
+  color: black;
+  font-size: 16px;
+  padding: 7px 15px 7px 15px;
+  border-radius: 5px;
+  margin-top: 15px;
+}
+.Welcome .madeLogin .link .icon {
+  margin-right: 10px;
+  font-size: 30px;
+}/*# sourceMappingURL=Welcome.css.map */
