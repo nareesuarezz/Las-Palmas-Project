@@ -1,14 +1,9 @@
-.backround {
+.backRound {
   display: none;
 }
 .LogoBackround {
-  position: fixed;
-  bottom: 0;
-  z-index: -2;
-  width: 100%;
-  height: 50vh; /* Adjust this value as needed */
-  background-image: url("../../Assest/Picture/Group\ 209.svg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background-color: #25841c;
+  display: flex;
+  align-items: flex-end;
+  height: 100vh;
 }
