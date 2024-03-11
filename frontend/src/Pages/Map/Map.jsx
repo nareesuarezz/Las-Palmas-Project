@@ -1,7 +1,7 @@
 import React from "react";
 import { MapContainer, TileLayer } from "react-leaflet";
 
-import "leaflet/dist/leaflet.css"; // Importa los estilos de Leaflet
+import "leaflet/dist/leaflet.css"; 
 import { NavBar } from "../../Components/Navbar/navbar";
 import { IoIosArrowBack } from "react-icons/io";
 import { NavLink } from "react-router-dom";

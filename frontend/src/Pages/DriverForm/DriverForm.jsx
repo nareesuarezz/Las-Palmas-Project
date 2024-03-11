@@ -17,7 +17,7 @@ export const DriverForm = () => {
 
       <section className="DriverForm">
         <form action="#" method="post">
-          <div class="form-group">
+          <div className="form-group">
             <input
               type="text"
               id="from"
@@ -26,7 +26,7 @@ export const DriverForm = () => {
               placeholder="From"
             ></input>
           </div>
-          <div class="form-group">
+          <div className="form-group">
             <input
               type="text"
               id="to"
@@ -35,7 +35,7 @@ export const DriverForm = () => {
               placeholder="TO"
             ></input>
           </div>
-          <div class="form-group">
+          <div className="form-group">
             <input
               type="text"
               id="carDetails"
@@ -44,7 +44,7 @@ export const DriverForm = () => {
               placeholder="Car Details"
             ></input>
           </div>
-          <div class="form-group">
+          <div className="form-group">
             <input
               type="text"
               id="registration"
@@ -53,7 +53,7 @@ export const DriverForm = () => {
               placeholder="Registration"
             ></input>
           </div>
-          <div class="form-group">
+          <div className="form-group">
             <input
               type="time"
               id="pickTime"
@@ -62,7 +62,7 @@ export const DriverForm = () => {
               placeholder="Pick Time"
             ></input>
           </div>
-          <div class="form-group">
+          <div className="form-group">
             <input
               type="date"
               id="pickDate"
@@ -71,14 +71,14 @@ export const DriverForm = () => {
               placeholder="Pick Date"
             ></input>
           </div>
-          <div class="form-group">
+          <div className="form-group">
             <textarea
               id="comment"
               name="comment"
               placeholder="Comment"
             ></textarea>
           </div>
-          <div class="form-group">
+          <div className="form-group">
             <button type="submit">Submit</button>
           </div>
         </form>
