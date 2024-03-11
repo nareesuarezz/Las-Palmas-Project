@@ -7,10 +7,16 @@ export const Logo = () => {
     const delay = setTimeout(() => {
       // Redirect to the policy page after 3 seconds (3000 milliseconds)
       window.location.href = "/policy";
-    }, 5000);
+    }, 10000000);
 
     return () => clearTimeout(delay);
   }, []);
 
-  return <></>;
+  return (
+    <>
+      <section className="LogoBackround">
+        <h1>EcoRide</h1>
+      </section>
+    </>
+  );
 };

@@ -7,7 +7,7 @@ export const Show = () => {
   return (
     <>
       <div className="top">
-        <NavLink to="/Policy">
+        <NavLink to="/Choose">
           <IoIosArrowBack className="icon" />
         </NavLink>
         <NavBar></NavBar>
