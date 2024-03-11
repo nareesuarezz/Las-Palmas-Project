@@ -13,6 +13,7 @@ import { Profile } from "./Pages/Profile/Profile";
 import { DriverForm } from "./Pages/DriverForm/DriverForm";
 import { Logo } from "./Pages/Logo/Logo";
 import { Policy } from "./Pages/Policy/Policy";
+import { Show } from "./Pages/Show/Show";
 function App() {
   return (
     <>
@@ -31,6 +32,7 @@ function App() {
         <Route path="/Chat" element={<Chat />} />
         <Route path="/Profile" element={<Profile />} />
         <Route path="/DriverForm" element={<DriverForm />} />
+        <Route path="/Show" element={<Show />} />
       </Routes>
     </>
   );

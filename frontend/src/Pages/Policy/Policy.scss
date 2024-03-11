@@ -3,17 +3,18 @@
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
+  p {
+    font-size: 20px;
+    width: 240px;
+    text-align: center;
+    margin-top: 60px;
+  }
 }
 
 h1 {
   font-size: 40px;
 }
-p {
-  font-size: 20px;
-  width: 240px;
-  text-align: center;
-  margin-top: 60px;
-}
+
 .link {
   width: 280px;
   height: 40px;
