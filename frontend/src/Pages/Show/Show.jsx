@@ -12,6 +12,17 @@ export const Show = () => {
         </NavLink>
         <NavBar></NavBar>
       </div>
+      <section className="Trips">
+        <h1>Available Trips</h1>
+        <article className="Pick">
+          <div className="LeftPick">
+            <p>From ----- To ----- : Toyota Corolla  Time: 8:00 AM</p>
+          </div>
+          <div className="rightPick">
+            <p>Details</p>
+          </div>
+        </article>
+      </section>
     </>
   );
 };

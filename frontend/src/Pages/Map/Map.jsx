@@ -47,7 +47,7 @@ export const Map = () => {
           <input type="text" placeholder="To" />
           <input type="datetime-local" />
         </form>
-        <NavLink className="close" to="/Show">
+        <NavLink className="button" to="/Show">
           Done
         </NavLink>
       </article>

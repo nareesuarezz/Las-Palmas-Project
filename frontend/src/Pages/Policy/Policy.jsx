@@ -13,7 +13,7 @@ export const Policy = () => {
         <br /> makes
         <br /> the difference.
       </p>
-      <NavLink className="link" to="/Welcome">
+      <NavLink className="button" to="/Welcome">
         Done
       </NavLink>
     </section>

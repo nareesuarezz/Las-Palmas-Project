@@ -32,7 +32,7 @@ export const Choose = () => {
             <p>Passenger??</p>
           </div>
         </article>
-        <NavLink className="Cancel" to="/Welcome">
+        <NavLink className="button" to="/Welcome">
           Cancel
         </NavLink>
       </section>

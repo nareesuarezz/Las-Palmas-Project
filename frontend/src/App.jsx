@@ -14,6 +14,8 @@ import { DriverForm } from "./Pages/DriverForm/DriverForm";
 import { Logo } from "./Pages/Logo/Logo";
 import { Policy } from "./Pages/Policy/Policy";
 import { Show } from "./Pages/Show/Show";
+import { WaitingTrips } from "./Pages/WaitingTrips/WaitingTrips";
+
 function App() {
   return (
     <>
@@ -33,6 +35,7 @@ function App() {
         <Route path="/Profile" element={<Profile />} />
         <Route path="/DriverForm" element={<DriverForm />} />
         <Route path="/Show" element={<Show />} />
+        <Route path="/WaitingTrips" element={<WaitingTrips />} />
       </Routes>
     </>
   );
