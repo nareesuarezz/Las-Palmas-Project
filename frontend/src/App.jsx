@@ -12,11 +12,16 @@ import { Chat } from "./Pages/Chat/Chat";
 import { Profile } from "./Pages/Profile/Profile";
 import { AuthForm } from "./Pages/Login-Signup/Authform";
 import { DriverForm } from "./Pages/DriverForm/DriverForm";
+import { Logo } from "./Pages/Logo/Logo";
+import { Policy } from "./Pages/Policy/Policy";
+import { Show } from "./Pages/Show/Show";
 function App() {
   return (
     <>
       <main className="backRound"></main>
       <Routes>
+        <Route path="/" element={<Logo />} />
+        <Route path="/Policy" element={<Policy />} />
         <Route path="/Welcome" element={<Welcome />} />
         <Route path="/Chrome" element={<Chrome />} />
         <Route path="/Facebook" element={<Facebook />} />
@@ -29,6 +34,7 @@ function App() {
         <Route path="/Profile" element={<Profile />} />
         <Route path="/Auth" element={<AuthForm />} />
         <Route path="/DriverForm" element={<DriverForm />} />
+        <Route path="/Show" element={<Show />} />
       </Routes>
     </>
   );
