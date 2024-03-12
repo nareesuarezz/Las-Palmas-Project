@@ -1,3 +1,7 @@
+@font-face {
+  font-family: Roboto-Light;
+  src: url(../../Assest/Roboto-Light.ttf);
+}
 .Pick {
   display: flex;
   justify-content: space-between;
@@ -12,7 +16,8 @@
   p {
     border-bottom: 1px solid black;
     display: block;
-  }
+    font-family:"Roboto-Light";
+    }
   p.Active {
     display: none;
   }
@@ -44,10 +49,17 @@
     text-align: start;
     font-size: 23px;
     border-radius: 10px;
+    font-family:"Roboto-Light";
 
     a {
       text-decoration: none;
       color: white;
     }
   }
+  
 }
+.LeftPick{
+   p {
+    font-family: "Roboto-Light";
+   }
+  }
