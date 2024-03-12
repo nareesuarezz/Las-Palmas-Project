@@ -1,7 +1,7 @@
 import "./App.scss";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { Chrome } from "./Pages/SocialMedia/Chrome/Chrome";
-import { Welcome } from "./Pages/Firstpage/Welcome";
+import { Welcome } from "./Pages/Welcome/Welcome";
 import { Facebook } from "./Pages/SocialMedia/Facebook/Facebook";
 import { Apple } from "./Pages/SocialMedia/Apple/Apple";
 import { CreateAccount } from "./Pages/CreateAccount/CreateAccount";
