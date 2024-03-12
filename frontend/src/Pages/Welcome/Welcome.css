@@ -9,34 +9,34 @@
   margin-top: 150px;
   margin-bottom: 50px;
 }
-.Welcome h1 p {
-  font-size: 25px;
-}
 .Welcome .madeLogin {
+  position: absolute;
   display: flex;
   justify-content: center;
   flex-direction: column;
   text-align: start;
   height: 111px;
   margin-top: 240px;
+  bottom: 80px;
 }
 .Welcome .madeLogin .create {
   color: black;
   padding: 5px;
+  margin-left: auto;
 }
 .Welcome .madeLogin .link {
   width: 300px;
   display: flex;
   align-items: center;
-  background-color: #d9d9d9;
+  background-color: #25841c;
   text-decoration: none;
-  color: black;
+  color: white;
   font-size: 16px;
-  padding: 7px 15px 7px 15px;
+  padding: 7px 45px 7px 35px;
   border-radius: 5px;
   margin-top: 15px;
 }
 .Welcome .madeLogin .link .icon {
-  margin-right: 10px;
   font-size: 30px;
+  margin-right: auto;
 }/*# sourceMappingURL=Welcome.css.map */

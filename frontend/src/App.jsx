@@ -6,7 +6,6 @@ import { Facebook } from "./Pages/SocialMedia/Facebook/Facebook";
 import { Apple } from "./Pages/SocialMedia/Apple/Apple";
 import { CreateAccount } from "./Pages/CreateAccount/CreateAccount";
 import { Choose } from "./Pages/Choose/Choose";
-import { Book } from "./Pages/Book/book";
 import { Map } from "./Pages/Map/Map";
 import { Chat } from "./Pages/Chat/Chat";
 import { Profile } from "./Pages/Profile/Profile";
@@ -15,6 +14,7 @@ import { Logo } from "./Pages/Logo/Logo";
 import { Policy } from "./Pages/Policy/Policy";
 import { Show } from "./Pages/Show/Show";
 import { WaitingTrips } from "./Pages/WaitingTrips/WaitingTrips";
+import { Details } from "./Pages/Details/Details";
 
 function App() {
   return (
@@ -28,13 +28,13 @@ function App() {
         <Route path="/Apple" element={<Apple />} />
         <Route path="/Create" element={<CreateAccount />} />
         <Route path="/Choose" element={<Choose />} />
-        <Route path="/Book" element={<Book />} />
         <Route path="/Map" element={<Map />} />
         <Route path="/Chat" element={<Chat />} />
         <Route path="/Profile" element={<Profile />} />
         <Route path="/DriverForm" element={<DriverForm />} />
         <Route path="/Show" element={<Show />} />
         <Route path="/WaitingTrips" element={<WaitingTrips />} />
+        <Route path="/Details" element={<Details />} />
       </Routes>
     </>
   );
