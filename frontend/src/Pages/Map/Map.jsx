@@ -42,9 +42,11 @@ export const Map = () => {
       <article className="mapForm">
         <form id="maptypo" action="">
           <h3>Set your trip</h3>
+          <div className="input">
           <input type="text" placeholder="From" />
-          <BsArrowDownUp className="arrowicon"/>
-          <input type="text" placeholder="To" />
+         <BsArrowDownUp className="arrowicon"/>
+         <input type="text" placeholder="To" />
+         </div>
           <input type="datetime-local" />
         </form>
         <NavLink className="button" to="/Show">

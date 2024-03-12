@@ -12,23 +12,31 @@
   right: 50%;
   left: 50%;
   margin-bottom: 15px;
-
+   
   input  {
     background-color: white;
+    margin-bottom: 8px;
   }
   h3 { 
     font-family:"Roboto-Regular";
     text-align: center;
   }
-  .arrowicon {
+  .arrowicon{
+     right: 5px;
+     position: absolute;
+     font-size: 30px;
+     top: 35px;
+     background-color: green;
+     color: white;
+     border-radius: 99px;
+     padding: 5px;
+ }
+ .input{
+     position: relative;
 
-    
- 
   
-    
-  }
-
-  #maptypo {
+ }
+#maptypo {
     justify-content: center;
     gap: 5px;
     background-color: white;
