@@ -1,7 +1,7 @@
 import React from "react";
 import { DiApple } from "react-icons/di";
 import { DiChrome } from "react-icons/di";
-import { FaFacebook } from "react-icons/fa";
+import { FaFacebookF } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
 
@@ -28,7 +28,7 @@ export const Welcome = () => {
             <DiChrome className="icon" /> Continue with Email
           </NavLink>
           <NavLink className="link" to="/Facebook">
-            <FaFacebook className="icon" /> Continue with Faceboox
+            <FaFacebookF className="icon" /> Continue with Faceboox
           </NavLink>
           <NavLink className="link" to="/Apple">
             <DiApple className="icon" /> Continue with Apple ID
