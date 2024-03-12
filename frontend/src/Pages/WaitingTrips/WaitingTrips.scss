@@ -1,0 +1,43 @@
+.AcceptD {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  h3 {
+    margin-top: 150px;
+    font-size: 25px;
+  }
+}
+.notiContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 80px;
+  border-radius: 40px;
+  background-color: #5f5f60;
+  color: white;
+  position: fixed;
+  top: -80px; /* Initially position above the viewport */
+  left: 1;
+  transition: top 0.9s ease; /* Transition for smooth sliding */
+  z-index: -1; /* Ensure it's on top of other content */
+}
+
+.notiContainer.open {
+  top: 90px; /* Slide down to the top of the viewport */
+}
+
+.notiContainer div {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  flex-direction: column;
+}
+
+.Notification {
+  margin: 0px 40px 0px 40px;
+  font-size: 45px;
+  color: white;
+}

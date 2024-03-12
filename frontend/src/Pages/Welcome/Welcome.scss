@@ -8,18 +8,17 @@
     font-size: 45px;
     margin-top: 150px;
     margin-bottom: 50px;
-    p {
-      font-size: 25px;
-    }
   }
+
   .madeLogin {
+    position: absolute;
     display: flex;
     justify-content: center;
     flex-direction: column;
-
     text-align: start;
     height: 111px;
     margin-top: 240px;
+    bottom: 80px;
     .create {
       color: black;
       padding: 5px;

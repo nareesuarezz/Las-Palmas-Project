@@ -1,8 +1,8 @@
 .Pick {
   display: flex;
   justify-content: space-between;
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
+  border-top: 1px solid #25841c;
+  width: 100%;
   padding: 20px 30px;
   font-size: 25px;
 }
@@ -23,9 +23,28 @@
     display: block;
     color: black;
     font-size: 20px;
+    position: relative;
+    left: -100px;
+    top: 50px;
+    font-size: 30px;
+    color: white;
+    z-index: 1;
   }
   .DetailsList {
     background-color: #25841c;
+    position: relative;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    width: 160px;
+    height: 170px;
+    padding: 20px;
+    right: 20px;
+    text-align: start;
+    font-size: 23px;
+    border-radius: 10px;
+
     a {
       text-decoration: none;
       color: white;

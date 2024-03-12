@@ -1,0 +1,23 @@
+.FacebookSite {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  h3 {
+    margin-top: 150px;
+    width: 270px;
+    text-align: center;
+    font-size: 23px;
+  }
+
+  .FacebookButtom {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 88%;
+    #Continue1 {
+      margin-bottom: 70px;
+    }
+  }
+}

@@ -9,6 +9,22 @@
   nav {
     display: none;
   }
+  .logo {
+    color: green;
+    text-align: center;
+    position: absolute;
+    z-index: 0;
+    top: 20px;
+    font-size: 40px;
+    width: 150px;
+    left: 50%;
+    transform: translateX(-50%); /* Move the element back by half of its own width */
+    font-family: "Sansita One";
+    font-style: normal;
+    font-variant: normal;
+    font-weight: 900;
+    line-height: 50px;
+  }
   nav.open {
     display: block;
     background-color: white;
@@ -36,5 +52,4 @@
     text-decoration: none;
     color: black;
   }
-
 }/*# sourceMappingURL=navbar.css.map */

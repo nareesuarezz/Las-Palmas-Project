@@ -9,16 +9,15 @@
   margin-top: 150px;
   margin-bottom: 50px;
 }
-.Welcome h1 p {
-  font-size: 25px;
-}
 .Welcome .madeLogin {
+  position: absolute;
   display: flex;
   justify-content: center;
   flex-direction: column;
   text-align: start;
   height: 111px;
   margin-top: 240px;
+  bottom: 80px;
 }
 .Welcome .madeLogin .create {
   color: black;

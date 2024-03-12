@@ -14,16 +14,14 @@ export const NavBar = () => {
 
   return (
     <>
-    <div className="logo">
-        EcoRide
-    </div>
+      <div className="logo">EcoRide</div>
       <div className="burger-menu" onClick={toggleMenu}>
         {isOpen ? <TfiClose /> : <CiMenuBurger />}
       </div>
       <nav className={isOpen ? "open" : ""}>
         <ul className="list">
           <li className="listOrder">
-            <NavLink className="fix" to="/Book">
+            <NavLink className="fix" to="/Show">
               Book
             </NavLink>
           </li>

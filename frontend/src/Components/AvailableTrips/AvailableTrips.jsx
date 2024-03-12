@@ -1,14 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
 import "./AvailableTrips.scss";
 import { IoIosArrowBack } from "react-icons/io";
 
-export const AvailableTrips = () => {
-  const [isOpen, setIsOpen] = useState(false);
+export const AvailableTrips = ({ handleToggle, openIndex, index }) => {
+  const isOpen = openIndex === index;
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
   return (
     <>
       <article className="Pick">
@@ -22,14 +19,14 @@ export const AvailableTrips = () => {
         <div className="rightPick">
           <p
             className={isOpen ? "Active" : "iconDetailsList"}
-            onClick={toggleMenu}
+            onClick={() => handleToggle(index)}
           >
             Details
           </p>
           <IoIosArrowBack
             id="Arrow"
             className={isOpen ? "iconDetailsList" : ""}
-            onClick={toggleMenu}
+            onClick={() => handleToggle(index)}
           />
           <ul id="close" className={isOpen ? "DetailsList" : ""}>
             <li>
@@ -39,7 +36,7 @@ export const AvailableTrips = () => {
             </li>
             <li>
               <NavLink className="ShowL" to="/WaitingTrips">
-                See Details
+                Chat
               </NavLink>
             </li>
             <li>
