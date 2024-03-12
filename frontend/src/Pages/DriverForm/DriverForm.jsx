@@ -4,10 +4,12 @@ import { IoIosArrowBack } from "react-icons/io";
 
 import { NavLink } from "react-router-dom";
 import "./DriverForm.scss";
+import { Image } from "../../Components/BackroundImg/Image";
 
 export const DriverForm = () => {
   return (
     <>
+      <Image></Image>
       <div className="top">
         <NavLink to="/Choose">
           <IoIosArrowBack className="icon" />

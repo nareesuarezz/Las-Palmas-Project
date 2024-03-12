@@ -11,7 +11,7 @@ h1 {
 .top {
   height: 90px;
   width: 100%;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid green;
   display: flex;
   align-items: center;
   font-size: 30px;
@@ -27,15 +27,19 @@ h1 {
   color: black;
 }
 
-.backRound {
+.button {
+  width: 320px;
+  height: 50px;
+  padding: 20px;
+  border: none;
+  background-color: #d5d5d5;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: black;
   position: fixed;
-  bottom: 0;
-  z-index: -2;
-  width: 100%;
-  height: 50vh; /* Adjust this value as needed */
-  background-image: url("./Assest/Picture/Rectangle25.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  /* Add other background properties as needed */
+  bottom: 50px;
+  font-size: 20px;
 }/*# sourceMappingURL=App.css.map */

@@ -1,0 +1,11 @@
+.backRound {
+  position: fixed;
+  bottom: 0;
+  z-index: -2;
+  width: 100%;
+  height: 50vh;
+  background-image: url("../../Assest/Picture/Group 208.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}/*# sourceMappingURL=Image.css.map */

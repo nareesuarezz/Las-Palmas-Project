@@ -6,10 +6,12 @@ import { NavLink } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
 
 import "./Welcome.scss";
+import { Image } from "../../Components/BackroundImg/Image";
 
 export const Welcome = () => {
   return (
     <>
+      <Image></Image>
       <div className="top">
         <NavLink to="/Policy">
           <IoIosArrowBack className="icon" />

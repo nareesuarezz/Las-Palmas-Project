@@ -5,10 +5,12 @@ import { FaCar } from "react-icons/fa";
 import { FaPersonWalkingLuggage } from "react-icons/fa6";
 import { NavLink } from "react-router-dom";
 import "./Choose.scss";
+import { Image } from "../../Components/BackroundImg/Image";
 
 export const Choose = () => {
   return (
     <>
+      <Image></Image>
       <div className="top">
         <NavLink to="/Welcome">
           <IoIosArrowBack className="icon" />

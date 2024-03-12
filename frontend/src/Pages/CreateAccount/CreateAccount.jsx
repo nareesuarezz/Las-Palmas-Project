@@ -2,9 +2,11 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
 import "./CreateAccount.scss";
+import { Image } from "../../Components/BackroundImg/Image";
 export const CreateAccount = () => {
   return (
     <>
+      <Image></Image>
       <div className="top">
         <NavLink to="/Welcome">
           <IoIosArrowBack className="icon" />

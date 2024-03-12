@@ -1,0 +1,35 @@
+.Pick {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  padding: 20px 30px;
+  font-size: 25px;
+}
+
+.rightPick {
+  display: flex;
+  align-items: center;
+}
+.rightPick p {
+  border-bottom: 1px solid black;
+  display: block;
+}
+.rightPick p.Active {
+  display: none;
+}
+.rightPick #Arrow {
+  display: none;
+}
+.rightPick #Arrow.iconDetailsList {
+  display: block;
+  color: black;
+  font-size: 20px;
+}
+.rightPick .DetailsList {
+  background-color: #25841c;
+}
+.rightPick .DetailsList a {
+  text-decoration: none;
+  color: white;
+}/*# sourceMappingURL=AvailableTrips.css.map */

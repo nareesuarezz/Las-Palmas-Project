@@ -19,7 +19,6 @@ import { WaitingTrips } from "./Pages/WaitingTrips/WaitingTrips";
 function App() {
   return (
     <>
-      <main className="backRound"></main>
       <Routes>
         <Route path="/" element={<Logo />} />
         <Route path="/Policy" element={<Policy />} />
