@@ -1,14 +1,55 @@
-import React from "react";
-import { MapContainer, TileLayer } from "react-leaflet";
+import { useEffect, useState } from "react";
+import { MapContainer, TileLayer, Popup, Marker, Polyline } from "react-leaflet";
+import { Icon } from "leaflet";
+import { createClient } from "@supabase/supabase-js";
 
-import "leaflet/dist/leaflet.css"; 
+import "leaflet/dist/leaflet.css";
 import { NavBar } from "../../Components/Navbar/navbar";
 import { IoIosArrowBack } from "react-icons/io";
 import { NavLink } from "react-router-dom";
 import { BsArrowDownUp } from "react-icons/bs";
 import "./Map.scss";
 
+const supabase = createClient('https://gdovlzckdjkuudotrxob.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdkb3ZsemNrZGprdXVkb3RyeG9iIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDk3MTQ2NTEsImV4cCI6MjAyNTI5MDY1MX0.hgVrFsLYyVwnggB1eJ9oNPcm1wfZPW3ENpwxuZyFFp8')
+
+function parseLocation(locationString) {
+  const coords = locationString.replace('(', '').replace(')', '').split(',');
+  return [parseFloat(coords[0]), parseFloat(coords[1])];
+}
+
+
+
 export const Map = () => {
+  const [routes, setRoutes] = useState([]);
+
+  const MapIcon = new Icon({
+    iconUrl: '/images/icon.png',
+    iconSize: [31, 31],
+    iconAnchor: [12, 41],
+  });
+
+  async function getRoutes() {
+    const { data, error } = await supabase
+      .from('routeinfo')
+      .select('*');
+
+    if (error) {
+      console.error('Error: ', error);
+      return;
+    }
+    console.log(data);
+    return data;
+  }
+
+  useEffect(() => {
+    async function fetchRoutes() {
+      const data = await getRoutes();
+      setRoutes(data);
+    }
+
+    fetchRoutes();
+  }, []);
+
   return (
     <>
       <div className="top">
@@ -28,15 +69,37 @@ export const Map = () => {
           zIndex: "-1",
         }}
       >
-        <MapContainer
-          center={[28.1248, -15.43]}
-          zoom={12}
-          style={{ height: "642px", width: "500px" }}
-        >
+
+        <MapContainer center={[64.1355, -21.8954]} zoom={12} style={{ height: "642px", width: "500px" }}>
           <TileLayer
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
             attribution='© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           />
+          {routes.map((route, index) => {
+            const fromLocation = parseLocation(route.fromlocation);
+            const toLocation = parseLocation(route.tolocation);
+
+            return (
+              <div key={index}>
+                {fromLocation && (
+                  <Marker position={fromLocation} icon={MapIcon}>
+                    <Popup>
+                      From: {fromLocation} - ID: {route.route_id}
+                    </Popup>
+                  </Marker>
+                )}
+                {toLocation && (
+                  <Marker position={toLocation} icon={MapIcon}>
+                    <Popup>
+                      To: {toLocation} - ID: {route.route_id}
+                    </Popup>
+                  </Marker>
+                )}
+              </div>
+            );
+          })}
+
+
         </MapContainer>
       </div>
       <article className="mapForm">
