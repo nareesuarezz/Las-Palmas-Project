@@ -1,3 +1,11 @@
+@font-face {
+  font-family: Roboto-Regular;
+  src: url(../../Assest/Roboto-Regular.ttf);
+}
+@font-face {
+  font-family: Roboto-aLight;
+  src: url(../../Assest/Roboto-Light.ttf);
+}
 .Welcome {
   display: flex;
 
@@ -8,9 +16,11 @@
     font-size: 45px;
     margin-top: 150px;
     margin-bottom: 50px;
-    p {
-      font-size: 25px;
-    }
+    font-family: Roboto-Regular;
+  }
+  #text-welcome {
+    font-size: 20px;
+    font-family:"Roboto-Light";
   }
   .madeLogin {
     display: flex;
@@ -19,19 +29,20 @@
 
     text-align: start;
     height: 111px;
-    margin-top: 240px;
+    margin-top: 190px;
     .create {
       color: black;
       padding: 5px;
+      margin-left:190px;
     }
     .link {
       width: 300px;
       display: flex;
       align-items: center;
-
-      background-color: #d9d9d9;
+      background-color: green;
       text-decoration: none;
-      color: black;
+      color: white;
+      font-family: Roboto-Light;
       font-size: 16px;
       padding: 7px 15px 7px 15px;
       border-radius: 5px;

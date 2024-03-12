@@ -18,20 +18,20 @@ export const Choose = () => {
       </div>
       <NavBar></NavBar>
       <section id="Choose">
-        <h1>What are you?</h1>
+       
         <article className="ChooseContainer">
           <div>
             <NavLink className="buttom" to="/DriverForm">
               <FaCar />
             </NavLink>
-            <p>Driver??</p>
+            <p>Driver</p>
           </div>
 
           <div>
             <NavLink className="buttom" to="/Map">
               <FaPersonWalkingLuggage />
             </NavLink>
-            <p>Passenger??</p>
+            <p>Passenger</p>
           </div>
         </article>
         <NavLink className="button" to="/Welcome">

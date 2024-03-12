@@ -11,6 +11,9 @@ export const CreateAccount = () => {
         <NavLink to="/Welcome">
           <IoIosArrowBack className="icon" />
         </NavLink>
+        <div className="logo">
+        EcoRide
+    </div>
       </div>
       <section className="MainC">
         <h1>Let’s set up your profile</h1>

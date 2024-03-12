@@ -1,7 +1,12 @@
+@font-face {
+  font-family: Roboto-Light;
+  src: url(./Assest/Roboto-Light.ttf);
+}
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  
 }
 h1 {
   margin-top: 150px;
@@ -30,14 +35,16 @@ h1 {
   height: 50px;
   padding: 20px;
   border: none;
-  background-color: #d5d5d5;
+  background-color: #25841C;
   border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
-  text-decoration: none;
-  color: black;
+  color:white;
+  font-family: Roboto-Light;
   position: fixed;
-  bottom: 50px;
+  bottom: 90px;
   font-size: 20px;
+  text-decoration:none;
+  
 }

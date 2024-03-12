@@ -43,7 +43,7 @@ export const Map = () => {
         <form id="maptypo" action="">
           <h3>Set your trip</h3>
           <input type="text" placeholder="From" />
-          <BsArrowDownUp />
+          <BsArrowDownUp className="arrowicon"/>
           <input type="text" placeholder="To" />
           <input type="datetime-local" />
         </form>

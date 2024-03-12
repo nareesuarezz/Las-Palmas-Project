@@ -16,12 +16,16 @@ export const Welcome = () => {
         <NavLink to="/Policy">
           <IoIosArrowBack className="icon" />
         </NavLink>
+        <div className="logo">
+        EcoRide
+    </div>
       </div>
       <section className="Welcome">
         <h1> Welcome</h1>
-        <p>
-          We’re so glad you are here! Please
-          <br /> choose an option below to sign in
+        <p id="text-welcome">
+          We’re so glad you are here! 
+          <br /> Please choose an option below to
+          <br />Sign in
         </p>
         <article className="madeLogin">
           <NavLink className="link" to="/Chrome">

@@ -1,3 +1,11 @@
+@font-face {
+  font-family: SansitaOne;
+  src: url(../../Assest/SansitaOne.ttf);
+}
+@font-face {
+  font-family: Roboto-Light;
+  src: url(../../Assest/Roboto-Light.ttf);
+}
 @media only screen and (max-width: 760px) {
   .burger-menu {
     position: absolute;
@@ -16,14 +24,13 @@
       top: 20px;
       font-size: 50px;
       width: 100%;
-      font-family: "Sansita One";
-  font-size: 35px;
-  font-style: normal;
-  font-variant: normal;
-  font-weight: 900;
-  line-height: 50px;
-
-  }
+      font-family: "SansitaOne";
+      font-size: 35px;
+      font-style: normal;
+      font-variant: normal;
+      font-weight: 900;
+      line-height: 50px;
+    }
   nav.open {
     display: block;
     background-color: white;
@@ -49,7 +56,8 @@
         a {
           text-decoration: none;
           color: black;
-        }
+          font-family:"Roboto-Light";
+         }
       }
     }
   }

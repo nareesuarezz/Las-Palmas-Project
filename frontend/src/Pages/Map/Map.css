@@ -8,12 +8,13 @@
   right: 50%;
   left: 50%;
 }
+
 .mapForm #maptypo {
   justify-content: center;
   gap: 5px;
-  background-color: rgba(136, 136, 136, 0.7);
+  background-color: white;
   height: 200px;
   padding: 10px 20px;
-  border-radius: 9px;
+  border-radius: 5px;
   z-index: 0;
 }/*# sourceMappingURL=Map.css.map */

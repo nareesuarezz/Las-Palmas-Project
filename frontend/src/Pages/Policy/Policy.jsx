@@ -9,11 +9,9 @@ export const Policy = () => {
       <section className="PolicyMain">
         <h1>Our Policy</h1>
         <p>
-          We want to connect people
-          <br /> for
+          We want to connect people for
           <br /> environmental purpose.
-          <br /> You can be the one who
-          <br /> makes
+          <br /> You can be the one who makes
           <br /> the difference.
         </p>
         <NavLink className="button" to="/Welcome">
