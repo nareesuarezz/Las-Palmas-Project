@@ -14,6 +14,9 @@ export const NavBar = () => {
 
   return (
     <>
+    <div className="logo">
+        EcoRide
+    </div>
       <div className="burger-menu" onClick={toggleMenu}>
         {isOpen ? <TfiClose /> : <CiMenuBurger />}
       </div>
