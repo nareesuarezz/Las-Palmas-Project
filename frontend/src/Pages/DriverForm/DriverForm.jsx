@@ -1,11 +1,57 @@
-import React from "react";
+import React, { useState } from "react";
+import { createClient } from "@supabase/supabase-js";
 import { NavBar } from "../../Components/Navbar/navbar";
 import { IoIosArrowBack } from "react-icons/io";
-
-import { NavLink } from "react-router-dom";
+import { NavLink, useParams, useNavigate } from "react-router-dom"; // Importa useNavigate
+import { useLocation } from "react-router-dom";
 import "./DriverForm.scss";
 
+const supabase = createClient('https://gdovlzckdjkuudotrxob.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdkb3ZsemNrZGprdXVkb3RyeG9iIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDk3MTQ2NTEsImV4cCI6MjAyNTI5MDY1MX0.hgVrFsLYyVwnggB1eJ9oNPcm1wfZPW3ENpwxuZyFFp8')
+
 export const DriverForm = () => {
+  const [fromLocation, setFromLocation] = useState("");
+  const [toLocation, setToLocation] = useState("");
+  const [pickTime, setPickTime] = useState("");
+  const [passengers, setPassengers] = useState("");
+  const [pickDate, setPickDate] = useState("");
+  const [comment, setComment] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
+  const navigate = useNavigate(); // Usa useNavigate
+  const location = useLocation();
+  const carUid = location.state.caruid; // Ahora tienes el ID del vehículo
+
+  console.log(carUid)
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    if (!fromLocation || !toLocation || !pickTime || !passengers || !pickDate) {
+      setErrorMessage("Por favor, rellena todos los campos.");
+      return;
+    }
+
+    const date = `${pickDate} ${pickTime}`;
+
+    const { data, error } = await supabase
+      .from("routeinfo")
+      .insert([
+        {
+          fromlocation: fromLocation,
+          tolocation: toLocation,
+          date: date,
+          passengers: passengers,
+          extra_info: comment,
+          car_uid: carUid,
+        },
+      ]);
+
+    if (error) {
+      console.error("Error: ", error);
+    } else {
+      console.log("Route info inserted successfully: ", carUid);
+      // navigate("/SomeOtherPage");
+    }
+  };
+
   return (
     <>
       <div className="top">
@@ -16,7 +62,7 @@ export const DriverForm = () => {
       <NavBar></NavBar>
 
       <section className="DriverForm">
-        <form action="#" method="post">
+        <form onSubmit={handleSubmit}>
           <div className="form-group">
             <input
               type="text"
@@ -24,6 +70,8 @@ export const DriverForm = () => {
               name="from"
               required
               placeholder="From"
+              value={fromLocation}
+              onChange={(e) => setFromLocation(e.target.value)}
             ></input>
           </div>
           <div className="form-group">
@@ -32,25 +80,9 @@ export const DriverForm = () => {
               id="to"
               name="to"
               required
-              placeholder="TO"
-            ></input>
-          </div>
-          <div className="form-group">
-            <input
-              type="text"
-              id="carDetails"
-              name="carDetails"
-              required
-              placeholder="Car Details"
-            ></input>
-          </div>
-          <div className="form-group">
-            <input
-              type="text"
-              id="registration"
-              name="registration"
-              required
-              placeholder="Registration"
+              placeholder="To"
+              value={toLocation}
+              onChange={(e) => setToLocation(e.target.value)}
             ></input>
           </div>
           <div className="form-group">
@@ -60,6 +92,19 @@ export const DriverForm = () => {
               name="pickTime"
               required
               placeholder="Pick Time"
+              value={pickTime}
+              onChange={(e) => setPickTime(e.target.value)}
+            ></input>
+          </div>
+          <div className="form-group">
+            <input
+              type="number"
+              id="passengers"
+              name="passenger"
+              required
+              placeholder="Passengers Available"
+              value={passengers}
+              onChange={(e) => setPassengers(e.target.value)}
             ></input>
           </div>
           <div className="form-group">
@@ -69,6 +114,8 @@ export const DriverForm = () => {
               name="pickDate"
               required
               placeholder="Pick Date"
+              value={pickDate}
+              onChange={(e) => setPickDate(e.target.value)}
             ></input>
           </div>
           <div className="form-group">
@@ -76,8 +123,11 @@ export const DriverForm = () => {
               id="comment"
               name="comment"
               placeholder="Comment"
+              value={comment}
+              onChange={(e) => setComment(e.target.value)}
             ></textarea>
           </div>
+          {errorMessage && <p>{errorMessage}</p>}
           <div className="form-group">
             <button type="submit">Submit</button>
           </div>

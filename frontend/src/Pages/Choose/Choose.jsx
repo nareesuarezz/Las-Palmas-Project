@@ -19,7 +19,7 @@ export const Choose = () => {
         <h1>What are you?</h1>
         <article className="ChooseContainer">
           <div>
-            <NavLink className="buttom" to="/DriverForm">
+            <NavLink className="buttom" to="/CarForm">
               <FaCar />
             </NavLink>
             <p>Driver??</p>
