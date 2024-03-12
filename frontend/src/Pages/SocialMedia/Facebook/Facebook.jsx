@@ -2,9 +2,12 @@ import React from "react";
 import { IoIosArrowBack } from "react-icons/io";
 import { NavLink } from "react-router-dom";
 import "./Facebook.scss";
+import { Image } from "../../../Components/BackroundImg/Image";
 export const Facebook = () => {
   return (
     <>
+      <Image></Image>
+      <div className="logo">EcoRide</div>
       <div className="top">
         <NavLink to="/Welcome">
           <IoIosArrowBack className="icon" />

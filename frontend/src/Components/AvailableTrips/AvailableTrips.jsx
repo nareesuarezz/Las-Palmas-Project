@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import "./AvailableTrips.scss";
 import { IoIosArrowBack } from "react-icons/io";
+import { IoCloseOutline } from "react-icons/io5";
 
 export const AvailableTrips = ({ handleToggle, openIndex, index }) => {
   const isOpen = openIndex === index;
@@ -23,7 +24,7 @@ export const AvailableTrips = ({ handleToggle, openIndex, index }) => {
           >
             Details
           </p>
-          <IoIosArrowBack
+          <IoCloseOutline
             id="Arrow"
             className={isOpen ? "iconDetailsList" : ""}
             onClick={() => handleToggle(index)}

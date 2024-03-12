@@ -4,28 +4,25 @@ import { DiChrome } from "react-icons/di";
 import { FaFacebookF } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
-
 import "./Welcome.scss";
 import { Image } from "../../Components/BackroundImg/Image";
 
 export const Welcome = () => {
   return (
     <>
-      <Image></Image>
+      <Image></Image> <div className="logo">EcoRide</div>
       <div className="top">
         <NavLink to="/Policy">
           <IoIosArrowBack className="icon" />
         </NavLink>
-        <div className="logo">
-        EcoRide
-    </div>
       </div>
       <section className="Welcome">
         <h1> Welcome</h1>
         <p id="text-welcome">
-          We’re so glad you are here! 
+          We’re so glad you are here!
           <br /> Please choose an option below to
-          <br />Sign in
+          <br />
+          Sign in
         </p>
         <article className="madeLogin">
           <NavLink className="link" to="/Chrome">

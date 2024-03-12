@@ -1,3 +1,7 @@
+@font-face {
+  font-family: Roboto-Light;
+  src: url(./Assest/Roboto-Light.ttf);
+}
 * {
   margin: 0;
   padding: 0;
@@ -19,7 +23,7 @@ h1 {
   position: relative;
   top: 0;
   left: 0;
-  z-index: 0;
+  z-index: 1;
   background-color: white;
   color: black;
 }
@@ -37,9 +41,11 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  text-decoration: none;
   color: white;
+  font-family: Roboto-Light;
+  text-decoration: none;
   position: fixed;
-  bottom: 50px;
+  bottom: 90px;
   font-size: 20px;
+  text-decoration: none;
 }/*# sourceMappingURL=App.css.map */
