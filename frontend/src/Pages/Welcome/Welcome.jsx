@@ -1,7 +1,7 @@
 import React from "react";
 import { DiApple } from "react-icons/di";
 import { DiChrome } from "react-icons/di";
-import { FaFacebookF } from "react-icons/fa";
+import { FaFacebook } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
 import { Image } from "../../Components/BackroundImg/Image";
