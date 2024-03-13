@@ -35,9 +35,9 @@ export const Welcome = () => {
           <Button className="link" to="/Chrome">
             <DiChrome className="icon" /> Continue with Email
           </Button>
-            <Button className="link" onClick={signInWithFacebook}>
+          <Button className="link" onClick={signInWithFacebook}>
             <FaFacebook className="icon" /> Continue with Faceboox
-            </Button>
+          </Button>
           <Button className="link" to="/Apple">
             <DiApple className="icon" /> Continue with Apple ID
           </Button>
