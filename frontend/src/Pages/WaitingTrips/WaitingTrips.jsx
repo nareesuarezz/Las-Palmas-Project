@@ -30,12 +30,14 @@ export const WaitingTrips = () => {
         <NavBar></NavBar>
       </div>
       <div className={`notiContainer ${notificationOpen ? "open" : ""}`}>
-        <AiOutlineMessage className="Notification" />
+        <NavLink to="/Chat">
+          <AiOutlineMessage className="Notification" />
+        </NavLink>
         <div>
           <p>Request Accepted</p>
           <p>Chat With The Driver</p>
         </div>
-        <NavLink to="/DriverChat">
+        <NavLink to="/Chat">
           <IoIosArrowDropdownCircle className="Notification" />
         </NavLink>
       </div>

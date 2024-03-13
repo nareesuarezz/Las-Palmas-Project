@@ -22,7 +22,7 @@
   top: -80px; /* Initially position above the viewport */
   left: 1;
   transition: top 0.9s ease; /* Transition for smooth sliding */
-  z-index: -1; /* Ensure it's on top of other content */
+  z-index: 1; /* Ensure it's on top of other content */
 }
 
 .notiContainer.open {

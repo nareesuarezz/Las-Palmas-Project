@@ -15,7 +15,7 @@ export const Details = () => {
         <NavBar></NavBar>
       </div>
       <section className="DetailContainer">
-        <NavLink to="/Chat" id="ChatD">
+        <NavLink to="/WaitingTrips" id="ChatD">
           Chat With The Driver
         </NavLink>
         <article id="detailsArticle">
@@ -34,7 +34,7 @@ export const Details = () => {
             </p>
           </div>
         </article>
-        <NavLink to="/DriverChat" className="button">
+        <NavLink to="/WaitingTrips" className="button">
           Add To You Trip
         </NavLink>
       </section>

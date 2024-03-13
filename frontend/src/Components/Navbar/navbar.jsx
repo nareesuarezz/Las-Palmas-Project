@@ -15,9 +15,13 @@ export const NavBar = () => {
   return (
     <>
       <div className="logo">EcoRide</div>
-      <div className="burger-menu" onClick={toggleMenu}>
+      <div
+        className={`burger-menu ${isOpen ? "white-close" : ""}`}
+        onClick={toggleMenu}
+      >
         {isOpen ? <TfiClose /> : <CiMenuBurger />}
       </div>
+
       <nav className={isOpen ? "open" : ""}>
         <ul className="list">
           <li className="listOrder">

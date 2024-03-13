@@ -34,16 +34,16 @@
   }
   nav.open {
     display: block;
-    background-color: white;
+    background-color: #25841c;
     display: flex;
     flex-direction: column;
-    box-shadow: 0px 10px 10px 10px black;
     position: absolute;
-    top: 20px;
-    right: 20px;
+    top: 5px;
+    right: 5px;
     padding-left: 70px;
     padding-top: 40px;
-    height: 90vh;
+    padding-right: 10px;
+    height: 320px;
     z-index: 3;
   }
   nav.open ul {
@@ -53,12 +53,15 @@
     display: flex;
     justify-content: flex-end;
     margin-right: 5px;
-    margin-bottom: 10px;
+    margin-top: 15px;
     font-size: 25px;
   }
   nav.open ul li a {
     text-decoration: none;
-    color: black;
+    color: white;
     font-family: "Roboto-Light";
   }
+}
+.white-close svg {
+  fill: white;
 }/*# sourceMappingURL=navbar.css.map */
