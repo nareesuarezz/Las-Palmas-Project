@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { FaBars } from "react-icons/fa";
-import { IoClose } from "react-icons/io5";
+import { CiMenuBurger } from "react-icons/ci";
+import { TfiClose } from "react-icons/tfi";
 
 import "./navbar.scss";
 
@@ -14,13 +14,18 @@ export const NavBar = () => {
 
   return (
     <>
-      <div className="burger-menu" onClick={toggleMenu}>
-        {isOpen ? <IoClose /> : <FaBars />}
+      <div className="logo">EcoRide</div>
+      <div
+        className={`burger-menu ${isOpen ? "white-close" : ""}`}
+        onClick={toggleMenu}
+      >
+        {isOpen ? <TfiClose /> : <CiMenuBurger />}
       </div>
+
       <nav className={isOpen ? "open" : ""}>
         <ul className="list">
           <li className="listOrder">
-            <NavLink className="fix" to="/Book">
+            <NavLink className="fix" to="/Show">
               Book
             </NavLink>
           </li>

@@ -1,0 +1,20 @@
+#close {
+  display: none;
+}
+
+#close.DetailsList {
+  display: block;
+  list-style-type: none;
+}
+
+.Trips {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-bottom: 1px solid #25841c;
+}
+.Trips #Shorter {
+  margin-bottom: 50px;
+  margin-top: 50px;
+}/*# sourceMappingURL=Show.css.map */

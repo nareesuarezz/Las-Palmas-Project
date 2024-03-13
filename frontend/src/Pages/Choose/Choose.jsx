@@ -5,10 +5,12 @@ import { FaCar } from "react-icons/fa";
 import { FaPersonWalkingLuggage } from "react-icons/fa6";
 import { NavLink } from "react-router-dom";
 import "./Choose.scss";
+import { Image } from "../../Components/BackroundImg/Image";
 
 export const Choose = () => {
   return (
     <>
+      <Image></Image>
       <div className="top">
         <NavLink to="/Welcome">
           <IoIosArrowBack className="icon" />
@@ -16,23 +18,23 @@ export const Choose = () => {
       </div>
       <NavBar></NavBar>
       <section id="Choose">
-        <h1>What are you?</h1>
+       
         <article className="ChooseContainer">
           <div>
             <NavLink className="buttom" to="/CarForm">
               <FaCar />
             </NavLink>
-            <p>Driver??</p>
+            <p>Driver</p>
           </div>
 
           <div>
             <NavLink className="buttom" to="/Map">
               <FaPersonWalkingLuggage />
             </NavLink>
-            <p>Passenger??</p>
+            <p>Passenger</p>
           </div>
         </article>
-        <NavLink className="Cancel" to="/Welcome">
+        <NavLink className="button" to="/Welcome">
           Cancel
         </NavLink>
       </section>

@@ -1,14 +1,6 @@
-.close {
-  display: flex;
-  justify-content: center;
-  padding: 10px;
-  background-color: #d5d5d5;
-  font-size: 25px;
-  text-decoration: none;
-  color: black;
-  width: 380px;
-  border-radius: 5px;
-  margin-top: 80px;
+@font-face {
+  font-family: Roboto-Regular;
+  src: url(../../Assest/Roboto-Regular.ttf);
 }
 .mapForm {
   display: flex;
@@ -16,14 +8,38 @@
   flex-direction: column;
   align-items: center;
   position: absolute;
-  bottom: 60px;
+  bottom: 140px;
   right: 50%;
   left: 50%;
+  margin-bottom: 15px;
+   
+  input  {
+    background-color: white;
+    margin-bottom: 8px;
+  }
+  h3 { 
+    font-family:"Roboto-Regular";
+    text-align: center;
+  }
+  .arrowicon{
+     right: 5px;
+     position: absolute;
+     font-size: 30px;
+     top: 35px;
+     background-color: green;
+     color: white;
+     border-radius: 99px;
+     padding: 5px;
+ }
+ .input{
+     position: relative;
 
-  #maptypo {
+  
+ }
+#maptypo {
     justify-content: center;
     gap: 5px;
-    background-color: rgba(136, 136, 136, 0.7);
+    background-color: white;
     height: 200px;
     padding: 10px 20px;
     border-radius: 9px;

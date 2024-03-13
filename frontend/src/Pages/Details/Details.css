@@ -1,0 +1,30 @@
+.DetailContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 120px;
+}
+.DetailContainer #ChatD {
+  margin-left: 140px;
+  color: black;
+  margin-bottom: 5px;
+}
+
+#detailsArticle {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  background-color: #25841c;
+  height: 340px;
+  width: 330px;
+  border-radius: 15px;
+  padding: 20px;
+  font-size: 20px;
+}
+
+#buttomDetail {
+  border-top: 1px solid white;
+  margin-top: 20px;
+  padding-top: 20px;
+}/*# sourceMappingURL=Details.css.map */
