@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
+import { useLocation } from "react-router-dom";
 import { createClient } from "@supabase/supabase-js";
 import "./CreateAccount.scss";
 
@@ -12,6 +13,10 @@ const supabase = createClient(
 );
 
 export const CreateAccount = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const userId = location.state.userId;
+  
   const [formData, setFormData] = useState({
     name: "",
     lastName: "",
@@ -25,7 +30,9 @@ export const CreateAccount = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = async (e) => {
+
+
+  const handleSubmitt = async (e) => {
     e.preventDefault();
 
     try {
@@ -33,25 +40,25 @@ export const CreateAccount = () => {
         .from("users")
         .insert([
           {
-            user_id: "3",
             name: formData.name,
             last_name: formData.lastName,
             phone_number: formData.number,
             description: formData.message,
-            // auth_id: last_auth_id,
+            auth_id: userId, //AQUI ES DONDE VA EL AUTENTICADO MONO MONO MONO MONO MONO
           },
         ]).select();
 
-      if (error) {
-        console.error("Error inserting data:", error.respose);
-      } else {
-        console.log("Data inserted successfully:", data.response);
-        // Optionally, redirect to a success page
+      // Si la inserción fue exitosa, navega a la página 'DriverForm'
+      if (!error) {
+        navigate('/DriverForm', { state: { userId } });
       }
+
+      // ...
     } catch (error) {
       console.error("Error:", error);
     }
   };
+  
 
   return (
     <>
@@ -62,7 +69,7 @@ export const CreateAccount = () => {
         </NavLink>
         <div className="logo">EcoRide</div>
       </div>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmitt}>
         <section className="MainC">
           <h1>Let’s set up your profile</h1>
           <article>
@@ -110,9 +117,12 @@ export const CreateAccount = () => {
               />
             </div>
             <button type="submit">Submit</button>
-          </form>
-        </article>
-      </section>
+          </article>
+        </section>
+      </form >
+
+
+
     </>
   );
 };
