@@ -9,7 +9,9 @@ import { Choose } from "./Pages/Choose/Choose";
 import { Map } from "./Pages/Map/Map";
 import { Chat } from "./Pages/Chat/Chat";
 import { Profile } from "./Pages/Profile/Profile";
+import { AuthForm } from "./Pages/Login-Signup/Authform";
 import { DriverForm } from "./Pages/DriverForm/DriverForm";
+import { CarForm } from "./Pages/CarForm/CarForm";
 import { Logo } from "./Pages/Logo/Logo";
 import { Policy } from "./Pages/Policy/Policy";
 import { Show } from "./Pages/Show/Show";
@@ -31,7 +33,9 @@ function App() {
         <Route path="/Map" element={<Map />} />
         <Route path="/Chat" element={<Chat />} />
         <Route path="/Profile" element={<Profile />} />
+        <Route path="/Auth" element={<AuthForm />} />
         <Route path="/DriverForm" element={<DriverForm />} />
+        <Route path="/CarForm" element={<CarForm />} />
         <Route path="/Show" element={<Show />} />
         <Route path="/WaitingTrips" element={<WaitingTrips />} />
         <Route path="/Details" element={<Details />} />

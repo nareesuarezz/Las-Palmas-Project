@@ -21,7 +21,7 @@ export const Choose = () => {
        
         <article className="ChooseContainer">
           <div>
-            <NavLink className="buttom" to="/DriverForm">
+            <NavLink className="buttom" to="/CarForm">
               <FaCar />
             </NavLink>
             <p>Driver</p>

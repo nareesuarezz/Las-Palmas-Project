@@ -1,8 +1,16 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
+import { createClient } from "@supabase/supabase-js";
 import "./CreateAccount.scss";
+
 import { Image } from "../../Components/BackroundImg/Image";
+
+const supabase = createClient(
+  "https://gdovlzckdjkuudotrxob.supabase.co",
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdkb3ZsemNrZGprdXVkb3RyeG9iIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDk3MTQ2NTEsImV4cCI6MjAyNTI5MDY1MX0.hgVrFsLYyVwnggB1eJ9oNPcm1wfZPW3ENpwxuZyFFp8"
+);
+
 export const CreateAccount = () => {
   return (
     <>
@@ -11,32 +19,12 @@ export const CreateAccount = () => {
         <NavLink to="/Welcome">
           <IoIosArrowBack className="icon" />
         </NavLink>
-        <div className="logo">
-        EcoRide
-    </div>
+        <div className="logo">EcoRide</div>
       </div>
       <section className="MainC">
         <h1>Let’s set up your profile</h1>
         <article>
           <form>
-            <div>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder="Email"
-                required
-              ></input>
-            </div>
-            <div>
-              <input
-                type="password"
-                id="password"
-                name="password"
-                required
-                placeholder="Password"
-              ></input>
-            </div>
             <div>
               <input
                 type="text"
@@ -69,7 +57,7 @@ export const CreateAccount = () => {
                 type="text"
                 id="Message"
                 name="message"
-                placeholder="Descriptsion"
+                placeholder="Description"
               ></input>
             </div>
             <button type="submit">Submit</button>
