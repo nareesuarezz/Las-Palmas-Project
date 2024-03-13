@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import React from "react";
+import { NavLink } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
 import { createClient } from "@supabase/supabase-js";
 import "./CreateAccount.scss";
@@ -12,47 +12,6 @@ const supabase = createClient(
 );
 
 export const CreateAccount = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    lastName: "",
-    number: "",
-    message: "",
-  });
-
-
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    try {
-      const { data, error } = await supabase
-        .from("users")
-        .insert([
-          {
-            user_id: "3",
-            name: formData.name,
-            last_name: formData.lastName,
-            phone_number: formData.number,
-            description: formData.message,
-            // auth_id: last_auth_id,
-          },
-        ]).select();
-
-      if (error) {
-        console.error("Error inserting data:", error.respose);
-      } else {
-        console.log("Data inserted successfully:", data.response);
-        // Optionally, redirect to a success page
-      }
-    } catch (error) {
-      console.error("Error:", error);
-    }
-  };
-
   return (
     <>
       <Image></Image>
@@ -62,10 +21,10 @@ export const CreateAccount = () => {
         </NavLink>
         <div className="logo">EcoRide</div>
       </div>
-      <form onSubmit={handleSubmit}>
-        <section className="MainC">
-          <h1>Let’s set up your profile</h1>
-          <article>
+      <section className="MainC">
+        <h1>Let’s set up your profile</h1>
+        <article>
+          <form>
             <div>
               <input
                 type="text"
@@ -73,20 +32,16 @@ export const CreateAccount = () => {
                 name="name"
                 placeholder="Name"
                 required
-                value={formData.name}
-                onChange={handleInputChange}
-              />
+              ></input>
             </div>
             <div>
               <input
                 type="text"
                 id="lastName"
                 name="lastName"
-                placeholder="Last Name"
+                placeholder="LastName"
                 required
-                value={formData.lastName}
-                onChange={handleInputChange}
-              />
+              ></input>
             </div>
             <div>
               <input
@@ -95,19 +50,15 @@ export const CreateAccount = () => {
                 name="number"
                 placeholder="Phone Number"
                 required
-                value={formData.number}
-                onChange={handleInputChange}
-              />
+              ></input>
             </div>
             <div>
               <input
                 type="text"
-                id="message"
+                id="Message"
                 name="message"
                 placeholder="Description"
-                value={formData.message}
-                onChange={handleInputChange}
-              />
+              ></input>
             </div>
             <button type="submit">Submit</button>
           </form>
