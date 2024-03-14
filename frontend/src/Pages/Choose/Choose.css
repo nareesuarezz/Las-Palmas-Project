@@ -1,0 +1,36 @@
+#Choose {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+#Choose h1 {
+  font-size: 40px;
+}
+#Choose .ChooseContainer {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 150px;
+}
+#Choose .ChooseContainer div p {
+  margin-top: 5px;
+  font-size: 20px;
+}
+#Choose .ChooseContainer div .buttom {
+  width: 140px;
+  height: 140px;
+  padding: 10px;
+  border-radius: 20px;
+  background-color: #d5d5d5;
+  font-size: 90px;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.4s;
+}
+#Choose .ChooseContainer div .buttom:hover {
+  background-color: rgba(213, 213, 213, 0.5); /* Partially transparent background color on hover */
+}/*# sourceMappingURL=Choose.css.map */

@@ -7,11 +7,9 @@
   padding: 0;
   box-sizing: border-box;
 }
-
 h1 {
   margin-top: 150px;
 }
-
 .top {
   height: 90px;
   width: 100%;
@@ -26,9 +24,9 @@ h1 {
   z-index: 1;
   background-color: white;
   color: black;
-}
-.top .icon {
-  color: black;
+  .icon {
+    color: black;
+  }
 }
 
 .button {
@@ -36,16 +34,22 @@ h1 {
   height: 50px;
   padding: 20px;
   border: none;
+
   background-color: #25841c;
+
   border-radius: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
+
   color: white;
   font-family: Roboto-Light;
+
   text-decoration: none;
+
   position: fixed;
   bottom: 90px;
   font-size: 20px;
   text-decoration: none;
-}/*# sourceMappingURL=App.css.map */
+  cursor: pointer;
+}

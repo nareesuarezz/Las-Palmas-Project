@@ -1,0 +1,43 @@
+@font-face {
+  font-family: Roboto-Regular;
+  src: url(../../Assest/Roboto-Regular.ttf);
+}
+#Choose {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+
+  .ChooseContainer {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 150px;
+
+    div {
+      p {
+        margin-top: 5px;
+        font-size: 20px;
+        font-family: "Roboto-Regular";
+      }
+      .buttom {
+        width: 140px;
+        height: 140px;
+        padding: 10px;
+        border-radius: 20px;
+        background-color: #25841C;
+        font-size: 90px;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: background-color 0.4s;
+      }
+
+      .buttom:hover {
+        background-color: #FFFFFF; /* Partially transparent background color on hover */
+      }
+    }
+  }
+}

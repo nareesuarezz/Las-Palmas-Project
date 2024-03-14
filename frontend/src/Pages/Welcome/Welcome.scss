@@ -1,0 +1,58 @@
+@font-face {
+  font-family: Roboto-Regular;
+  src: url(../../Assest/Roboto-Regular.ttf);
+}
+@font-face {
+  font-family: Roboto-aLight;
+  src: url(../../Assest/Roboto-Light.ttf);
+}
+.Welcome {
+  display: flex;
+
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  h1 {
+    font-size: 45px;
+    margin-top: 150px;
+    margin-bottom: 50px;
+    font-family: Roboto-Regular;
+  }
+  #text-welcome {
+    font-size: 20px;
+    font-family: "Roboto-Light";
+  }
+
+  .madeLogin {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: start;
+    height: 111px;
+    margin-top: 240px;
+    bottom: 140px;
+    .create {
+      color: black;
+      padding: 5px;
+      margin-left: auto;
+    }
+    .link {
+      width: 300px;
+      display: flex;
+      align-items: center;
+      background-color: green;
+      text-decoration: none;
+      color: white;
+      font-family: Roboto-Light;
+      font-size: 16px;
+      padding: 7px 45px 7px 35px;
+      border-radius: 5px;
+      margin-top: 15px;
+      .icon {
+        font-size: 30px;
+        margin-right: auto;
+      }
+    }
+  }
+}
