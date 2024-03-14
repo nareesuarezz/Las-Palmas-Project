@@ -94,7 +94,7 @@ export const DriverForm = () => {
       console.error("Error: ", error);
     } else {
       console.log("Route info inserted successfully: ", carUid);
-      // navigate("/SomeOtherPage");
+      navigate("/WaitingTrips");
     }
   };
 

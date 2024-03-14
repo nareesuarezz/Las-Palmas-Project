@@ -1,25 +1,36 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import "./AvailableTrips.scss";
-import { IoIosArrowBack } from "react-icons/io";
 import { IoCloseOutline } from "react-icons/io5";
+import { useNavigate } from 'react-router-dom';
+export const AvailableTrips = ({ handleToggle, openIndex, index, route }) => {
+  const navigate = useNavigate();
+  const handleSeeDetailsClick = () => {
+    navigate('/Details', { state: { route_id: route.route_id } });
+  };
 
-export const AvailableTrips = ({ handleToggle, openIndex, index }) => {
   const isOpen = openIndex === index;
+  console.log("rutas ", route.route_id)
+  const date = new Date(route.date);
+  const formattedDate = `${date.toLocaleDateString()} ${date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`;
 
   return (
+
     <>
+
       <article className="Pick">
         <div className="LeftPick">
           <p>
-            From ----- To ----- : <br />
-            Toyota Corolla <br />
-            Time: 8:00 AM
+
+            From {route.fromLocationName} To {route.toLocationName} : <br />
+            {route.car.model} <br />
+            Time: {formattedDate}
           </p>
         </div>
         <div className="rightPick">
           <p
             className={isOpen ? "Active" : "iconDetailsList"}
+
             onClick={() => handleToggle(index)}
           >
             Details
@@ -30,8 +41,8 @@ export const AvailableTrips = ({ handleToggle, openIndex, index }) => {
             onClick={() => handleToggle(index)}
           />
           <ul id="close" className={isOpen ? "DetailsList" : ""}>
-            <li>
-              <NavLink className="ShowL" to="/Details">
+            <li className="ShowL" onClick={handleSeeDetailsClick}>
+            <NavLink className="ShowL" to="/Details">
                 See Details
               </NavLink>
             </li>
@@ -43,6 +54,7 @@ export const AvailableTrips = ({ handleToggle, openIndex, index }) => {
             <li>
               <NavLink className="ShowL" to="/Map">
                 Back to Map
+
               </NavLink>
             </li>
           </ul>

@@ -35,7 +35,7 @@ export const WaitingTrips = () => {
         </NavLink>
         <div>
           <p>Request Accepted</p>
-          <p>Chat With The Driver</p>
+          <p>Chat With The Passenger</p>
         </div>
         <NavLink to="/Chat">
           <IoIosArrowDropdownCircle className="Notification" />
@@ -43,7 +43,7 @@ export const WaitingTrips = () => {
       </div>
       <section className="AcceptD">
         <h3>
-          Wait for the driver to
+          Wait for a passenger to
           <br /> accept your ride
         </h3>
         <NavLink to="/Show" className="button">
