@@ -95,6 +95,7 @@ export const DriverForm = () => {
       console.error("Error: ", error);
     } else {
       console.log("Route info inserted successfully: ", carUid);
+      navigate("/DriverWait");
       // navigate("/SomeOtherPage");
     }
   };
@@ -111,7 +112,7 @@ export const DriverForm = () => {
 
       <section className="DriverForm">
         <h2>Set your trip</h2>
-        <form onSubmit={handleSubmit}>
+        <form className="stayDown" onSubmit={handleSubmit}>
           <div className="form-group">
             <input
               type="text"

@@ -15,8 +15,36 @@ h1 {
   align-items: center;
   flex-direction: column;
   border-bottom: 1px solid #25841c;
-  #Shorter {
-    margin-bottom: 50px;
-    margin-top: 50px;
-  }
+  padding: 0 20px; /* Adjust padding as needed */
+  max-height: 600px; /* Set maximum height for .Trips */
+  position: relative; /* Ensure proper positioning of .TripsContainer */
+}
+
+.TripsContainer {
+  overflow-y: auto; /* Enable vertical scrolling */
+  max-height: 100%; /* Allow .TripsContainer to take up maximum available height */
+  padding: 0 20px; /* Adjust padding as needed */
+}
+
+#Shorter {
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+
+/* Custom scrollbar styles */
+.TripsContainer::-webkit-scrollbar {
+  width: 8px;
+}
+
+.TripsContainer::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.TripsContainer::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.TripsContainer::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }

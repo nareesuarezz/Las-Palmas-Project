@@ -23,7 +23,7 @@ export const Logo = () => {
 
   return (
     <>
-      <div style={{ height: "100dvh", width: "100%" }}>
+      <div className="makeGreen" style={{ height: "100vh", width: "100%" }}>
         <Lottie options={defaultOptions} height="100%" width="100%" />
       </div>
     </>

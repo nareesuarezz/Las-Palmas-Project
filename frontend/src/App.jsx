@@ -20,6 +20,7 @@ import { Details } from "./Pages/Details/Details";
 import { Upcomming } from "./Pages/Upcomming/Upcomming";
 import { Cancel } from "./Pages/Cancel/Cancel";
 import { Last } from "./Pages/LastPage/Last";
+import { DriverWait } from "./Pages/DriverWait/DriverWait";
 
 function App() {
   return (
@@ -44,7 +45,8 @@ function App() {
         <Route path="/Details" element={<Details />} />
         <Route path="/Upcoming" element={<Upcomming />} />
         <Route path="/Cancel" element={<Cancel />} />
-        <Route path="/Last" element={<Last />} />
+        <Route path="/Last" element={<Last />} />{" "}
+        <Route path="/DriverWait" element={<DriverWait />} />
       </Routes>
     </>
   );
