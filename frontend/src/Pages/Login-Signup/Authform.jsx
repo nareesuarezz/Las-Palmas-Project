@@ -20,7 +20,7 @@ export const AuthForm = () => {
         const {
             data: { subscription },
         } = supabase.auth.onAuthStateChange((event, session) => {
-            
+
             if (event === 'SIGNED_IN') {
                 localStorage.setItem('userId', session.user.id);
                 setSession(session);
@@ -32,8 +32,6 @@ export const AuthForm = () => {
         return () => subscription.unsubscribe();
     }, []);
 
-
-
     if (!session) {
         return (
             <>
@@ -44,15 +42,12 @@ export const AuthForm = () => {
                         <IoIosArrowBack className="icon" />
                     </NavLink>
                 </div>
-
                 <section className="MainC">
                     <h1>Log In Sign Up</h1>
                     <Auth
                         supabaseClient={supabase}
                         appearance={{
                             style: {
-
-
                                 label: {
                                     display: "none"
                                 },
@@ -64,7 +59,6 @@ export const AuthForm = () => {
                                     backgroundColor: "white",
                                     opacity: "0.6",
                                     fontFamily: "Roboto",
-
                                 },
                                 button: {
                                     width: "300px",
@@ -77,13 +71,10 @@ export const AuthForm = () => {
                                     border: "none",
                                     borderRadius: "5px",
                                     fontFamily: "Roboto",
-
                                 },
                                 anchor: {
                                     fontFamily: "Roboto"
                                 }
-
-
                             },
                         }}
                         providers={[]}

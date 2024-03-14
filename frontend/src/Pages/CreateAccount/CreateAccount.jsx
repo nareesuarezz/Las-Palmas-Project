@@ -15,6 +15,19 @@ export const CreateAccount = () => {
   const location = useLocation();
 
   const authId = localStorage.getItem('userId');
+
+  if (authId === null || authId === "") {
+    supabase.auth.getUser()
+      .then(session => {
+        console.log(session.data.user.id);
+        authId = session.data.user.id
+      })
+      .catch(error => {
+        console.error("Error:", error);
+      });
+  }
+
+
   console.log(authId)
 
   const [formData, setFormData] = useState({
@@ -154,9 +167,6 @@ export const CreateAccount = () => {
 
         </section>
       </form >
-
-
-
     </>
   );
 };
