@@ -15,6 +15,7 @@ export const CreateAccount = () => {
   const location = useLocation();
 
   const authId = localStorage.getItem('userId');
+  console.log(authId)
 
   if (authId === null || authId === "") {
     supabase.auth.getUser()
@@ -28,7 +29,6 @@ export const CreateAccount = () => {
   }
 
 
-  console.log(authId)
 
   const [formData, setFormData] = useState({
     name: "",

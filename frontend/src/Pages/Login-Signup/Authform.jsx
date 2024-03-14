@@ -23,6 +23,7 @@ export const AuthForm = () => {
 
             if (event === 'SIGNED_IN') {
                 localStorage.setItem('userId', session.user.id);
+                console.log(session.user.id)
                 setSession(session);
             } else {
                 localStorage.removeItem('userId');
@@ -83,6 +84,6 @@ export const AuthForm = () => {
             </>
         );
     } else {
-        navigate('/Create');
+        navigate('/Create' );
     }
 };

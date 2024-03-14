@@ -94,7 +94,7 @@ export const DriverForm = () => {
       console.error("Error: ", error);
     } else {
       console.log("Route info inserted successfully: ", carUid);
-      navigate("/WaitingTrips");
+      navigate("/WaitingTrips", { state: { userId: userId } })
     }
   };
 
@@ -102,11 +102,9 @@ export const DriverForm = () => {
     <>
       <Image></Image>
       <div className="top">
-        <NavLink to="/Choose">
-          <IoIosArrowBack className="icon" />
-        </NavLink>
+      <IoIosArrowBack className="icon" onClick={() => navigate("/Choose", { state: { userId: userId } })} />
       </div>
-      <NavBar></NavBar>
+       <NavBar></NavBar>   
 
       <section className="DriverForm">
         <form onSubmit={handleSubmit}>

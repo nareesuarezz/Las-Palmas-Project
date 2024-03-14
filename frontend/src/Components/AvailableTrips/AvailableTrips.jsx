@@ -2,13 +2,21 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import "./AvailableTrips.scss";
 import { IoCloseOutline } from "react-icons/io5";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 export const AvailableTrips = ({ handleToggle, openIndex, index, route }) => {
+  const location = useLocation();
+  const userId = location.state.userId
+  console.log(userId)
   const navigate = useNavigate();
   const handleSeeDetailsClick = () => {
-    navigate('/Details', { state: { route_id: route.route_id } });
+    navigate('/Details', { state: { route_id: route.route_id, user_id: userId } });
   };
-
+  const handleChatClick = () => {
+    navigate('/Chat', { state: { user_id: userId } });
+  };
+  const handleMapClick = () => {
+    navigate('/Map', { state: { user_id: userId } });
+  };
   const isOpen = openIndex === index;
   console.log("rutas ", route.route_id)
   const date = new Date(route.date);
@@ -42,16 +50,16 @@ export const AvailableTrips = ({ handleToggle, openIndex, index, route }) => {
           />
           <ul id="close" className={isOpen ? "DetailsList" : ""}>
             <li className="ShowL" onClick={handleSeeDetailsClick}>
-            <NavLink className="ShowL" to="/Details">
+              <NavLink to="/Details">
                 See Details
               </NavLink>
             </li>
-            <li>
-              <NavLink className="ShowL" to="/WaitingTrips">
+            <li onClick={handleChatClick}>
+              <NavLink className="ShowL">
                 Chat
               </NavLink>
             </li>
-            <li>
+            <li onClick={handleMapClick}>
               <NavLink className="ShowL" to="/Map">
                 Back to Map
 
