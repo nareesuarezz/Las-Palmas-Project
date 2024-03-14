@@ -1,3 +1,7 @@
+@font-face {
+  font-family: Roboto-Light;
+  src: url(./Assest/Roboto-Light.ttf);
+}
 * {
   margin: 0;
   padding: 0;
@@ -11,7 +15,7 @@ h1 {
 .top {
   height: 90px;
   width: 100%;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid green;
   display: flex;
   align-items: center;
   font-size: 30px;
@@ -19,7 +23,7 @@ h1 {
   position: relative;
   top: 0;
   left: 0;
-  z-index: 0;
+  z-index: 1;
   background-color: white;
   color: black;
 }
@@ -27,15 +31,21 @@ h1 {
   color: black;
 }
 
-.backRound {
+.button {
+  width: 320px;
+  height: 50px;
+  padding: 20px;
+  border: none;
+  background-color: #25841c;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-family: Roboto-Light;
+  text-decoration: none;
   position: fixed;
-  bottom: 0;
-  z-index: -2;
-  width: 100%;
-  height: 50vh; /* Adjust this value as needed */
-  background-image: url("./Assest/Picture/Rectangle25.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  /* Add other background properties as needed */
+  bottom: 90px;
+  font-size: 20px;
+  text-decoration: none;
 }/*# sourceMappingURL=App.css.map */

@@ -6,8 +6,9 @@ import { IoIosArrowBack } from "react-icons/io";
 import { NavLink, useParams, useNavigate } from "react-router-dom"; // Importa useNavigate
 import { useLocation } from "react-router-dom";
 import "./DriverForm.scss";
+import { Image } from "../../Components/BackroundImg/Image";
 
-const supabase = createClient('https://gdovlzckdjkuudotrxob.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdkb3ZsemNrZGprdXVkb3RyeG9iIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDk3MTQ2NTEsImV4cCI6MjAyNTI5MDY1MX0.hgVrFsLYyVwnggB1eJ9oNPcm1wfZPW3ENpwxuZyFFp8')
+const supabase = createClient('https://hyjkqodxeienwesmnalj.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh5amtxb2R4ZWllbndlc21uYWxqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA0MDY5MzYsImV4cCI6MjAyNTk4MjkzNn0.pQeTd7zxmI8U67FUYepdZF4NWicXecjAZ2-GvQMgMoc')
 
 async function fetchLocationName(lat, lon) {
   const response = await fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`);
@@ -40,10 +41,11 @@ export const DriverForm = () => {
   const navigate = useNavigate(); // Usa useNavigate
   const location = useLocation();
   const carUid = location.state.caruid; // Ahora tienes el ID del vehículo
-
+  const userId = location.state.userId
   const [showFromMap, setShowFromMap] = useState(false);
   const [showToMap, setShowToMap] = useState(false);
 
+  console.log("car id: ", carUid, " user id: ", userId)
   const fromMapRef = useRef(null);
   const toMapRef = useRef(null);
 
@@ -84,6 +86,7 @@ export const DriverForm = () => {
           passengers: passengers,
           extra_info: comment,
           car_uid: carUid,
+          user_id: userId,
         },
       ]);
 
@@ -91,12 +94,13 @@ export const DriverForm = () => {
       console.error("Error: ", error);
     } else {
       console.log("Route info inserted successfully: ", carUid);
-      // navigate("/SomeOtherPage");
+      navigate("/WaitingTrips");
     }
   };
 
   return (
     <>
+      <Image></Image>
       <div className="top">
         <NavLink to="/Choose">
           <IoIosArrowBack className="icon" />

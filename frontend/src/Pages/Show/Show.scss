@@ -1,0 +1,22 @@
+#close {
+  display: none;
+}
+h1 {
+  font-family: "Roboto-Regular";
+}
+
+#close.DetailsList {
+  display: block;
+  list-style-type: none;
+}
+.Trips {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-bottom: 1px solid #25841c;
+  #Shorter {
+    margin-bottom: 50px;
+    margin-top: 50px;
+  }
+}

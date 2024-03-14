@@ -4,9 +4,9 @@ import { NavBar } from "../../Components/Navbar/navbar";
 import { IoIosArrowBack } from "react-icons/io";
 import { NavLink, useNavigate } from "react-router-dom";
 import "./CarForm.scss";
+import { useLocation } from "react-router-dom";
 
-
-const supabase = createClient('https://gdovlzckdjkuudotrxob.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdkb3ZsemNrZGprdXVkb3RyeG9iIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDk3MTQ2NTEsImV4cCI6MjAyNTI5MDY1MX0.hgVrFsLYyVwnggB1eJ9oNPcm1wfZPW3ENpwxuZyFFp8')
+const supabase = createClient('https://hyjkqodxeienwesmnalj.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh5amtxb2R4ZWllbndlc21uYWxqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA0MDY5MzYsImV4cCI6MjAyNTk4MjkzNn0.pQeTd7zxmI8U67FUYepdZF4NWicXecjAZ2-GvQMgMoc')
 
 export const CarForm = () => {
   const [model, setModel] = useState("");
@@ -14,6 +14,9 @@ export const CarForm = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const [carUid, setCarUid] = useState(null); // Nuevo estado para guardar el carUid
   const navigate = useNavigate();
+  const location = useLocation();
+  const userId = location.state.userId;
+  console.log(userId)
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -46,7 +49,7 @@ export const CarForm = () => {
       } else {
         setCarUid(carData.caruid); // Guardamos el carUid en el estado
         console.log("Car info inserted successfully: ", "Car uid: ", carData.caruid);
-        navigate("/DriverForm", { state: { caruid: carData.caruid } }); // Navegamos después de actualizar carUid
+        navigate("/DriverForm", { state: { caruid: carData.caruid, userId: userId } });
       }
     }
   };
@@ -54,6 +57,7 @@ export const CarForm = () => {
     <>
       <div className="top">
         <NavLink to="/Choose">
+        
           <IoIosArrowBack className="icon" />
         </NavLink>
       </div>
