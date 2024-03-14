@@ -19,8 +19,14 @@ export const AuthForm = () => {
 
         const {
             data: { subscription },
-        } = supabase.auth.onAuthStateChange((_event, session) => {
-            setSession(session);
+        } = supabase.auth.onAuthStateChange((event, session) => {
+            
+            if (event === 'SIGNED_IN') {
+                localStorage.setItem('userId', session.user.id);
+                setSession(session);
+            } else {
+                localStorage.removeItem('userId');
+            }
         });
 
         return () => subscription.unsubscribe();

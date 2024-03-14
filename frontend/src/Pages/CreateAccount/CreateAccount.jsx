@@ -13,13 +13,8 @@ export const CreateAccount = async () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  let auth_id;
-
-  const { data, error } = await supabase
-    .from('auth.users')
-    .select('id')
-    .order('id', { ascending: false })
-    .limit(1)
+  const authId = localStorage.getItem('userId');
+  console.log(authId)
 
   const [formData, setFormData] = useState({
     name: "",
@@ -38,22 +33,21 @@ export const CreateAccount = async () => {
     e.preventDefault();
 
     try {
+      const { data, error } = await supabase
+        .from("users")
+        .insert([
+          {
+            name: formData.name,
+            last_name: formData.lastName,
+            phone_number: formData.number,
+            description: formData.message,
+            auth_id: authId,
+          },
+        ]).select();
 
-      // const { data, error } = await supabase
-      //   .from("users")
-      //   .insert([
-      //     {
-      //       name: formData.name,
-      //       last_name: formData.lastName,
-      //       phone_number: formData.number,
-      //       description: formData.message,
-      //       auth_id: auth_id,
-      //     },
-      //   ]).select();
-
-      // if (!error) {
-      //   navigate('/DriverForm', { state: { auth_id } });
-      // }
+      if (!error) {
+        navigate('/Choose');
+      }
 
     } catch (error) {
       console.error("Error:", error);
@@ -81,6 +75,8 @@ export const CreateAccount = async () => {
                 name="name"
                 placeholder="Name"
                 required
+                value={formData.name}
+                onChange={handleInputChange}
               ></input>
             </div>
             <div>
@@ -90,6 +86,8 @@ export const CreateAccount = async () => {
                 name="lastName"
                 placeholder="LastName"
                 required
+                value={formData.lastName}
+                onChange={handleInputChange}
               ></input>
             </div>
             <div>
@@ -99,6 +97,8 @@ export const CreateAccount = async () => {
                 name="number"
                 placeholder="Phone Number"
                 required
+                value={formData.number}
+                onChange={handleInputChange}
               ></input>
             </div>
             <div>
@@ -107,6 +107,8 @@ export const CreateAccount = async () => {
                 id="Message"
                 name="message"
                 placeholder="Description"
+                value={formData.message}
+                onChange={handleInputChange}
               ></input>
             </div>
             <button type="submit">Submit</button>
