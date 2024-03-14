@@ -34,7 +34,7 @@ export const Details = () => {
             </p>
           </div>
         </article>
-        <NavLink to="/WaitingTrips" className="button">
+        <NavLink to="/Upcoming" className="button">
           Add To You Trip
         </NavLink>
       </section>

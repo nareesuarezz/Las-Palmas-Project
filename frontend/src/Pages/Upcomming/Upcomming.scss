@@ -1,0 +1,17 @@
+.UpcommingC {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  h1 {
+    margin-top: 80px;
+  }
+  #CardsC {
+    position: absolute;
+    background-color: #25841c;
+    width: 350px;
+    height: 460px;
+    border-radius: 20px;
+    bottom: 80px;
+  }
+}
