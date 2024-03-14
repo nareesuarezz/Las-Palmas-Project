@@ -9,17 +9,17 @@ import { Image } from "../../Components/BackroundImg/Image";
 
 const supabase = createClient('https://hyjkqodxeienwesmnalj.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh5amtxb2R4ZWllbndlc21uYWxqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA0MDY5MzYsImV4cCI6MjAyNTk4MjkzNn0.pQeTd7zxmI8U67FUYepdZF4NWicXecjAZ2-GvQMgMoc')
 
-export const CreateAccount = () => {
+export const CreateAccount = async () => {
   const navigate = useNavigate();
   const location = useLocation();
 
   let auth_id;
-  const [user, setUser] = useState(null);
 
-  useEffect(() => {
-    auth_id = setUser(supabase.auth.user.id())
-  }, [])
-
+  const { data, error } = await supabase
+    .from('auth.users')
+    .select('id')
+    .order('id', { ascending: false })
+    .limit(1)
 
   const [formData, setFormData] = useState({
     name: "",
@@ -28,33 +28,32 @@ export const CreateAccount = () => {
     message: "",
   });
 
-
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
 
-
   const handleSubmitt = async (e) => {
     e.preventDefault();
 
     try {
-      const { data, error } = await supabase
-        .from("users")
-        .insert([
-          {
-            name: formData.name,
-            last_name: formData.lastName,
-            phone_number: formData.number,
-            description: formData.message,
-            auth_id: auth_id,
-          },
-        ]).select();
 
-      if (!error) {
-        navigate('/DriverForm', { state: { auth_id } });
-      }
+      // const { data, error } = await supabase
+      //   .from("users")
+      //   .insert([
+      //     {
+      //       name: formData.name,
+      //       last_name: formData.lastName,
+      //       phone_number: formData.number,
+      //       description: formData.message,
+      //       auth_id: auth_id,
+      //     },
+      //   ]).select();
+
+      // if (!error) {
+      //   navigate('/DriverForm', { state: { auth_id } });
+      // }
 
     } catch (error) {
       console.error("Error:", error);
