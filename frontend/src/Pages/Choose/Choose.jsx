@@ -4,10 +4,24 @@ import { IoIosArrowBack } from "react-icons/io";
 import { FaCar } from "react-icons/fa";
 import { FaPersonWalkingLuggage } from "react-icons/fa6";
 import { NavLink } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import "./Choose.scss";
 import { Image } from "../../Components/BackroundImg/Image";
 
 export const Choose = () => {
+  const location = useLocation();
+  const navigate = useNavigate();
+  const userId = location.state.userId;
+  console.log(userId)
+
+  const goToCarForm = () => {
+    navigate("/CarForm", { state: { userId: userId } });
+  };
+
+  const goToMap = () => {
+    navigate("/Map", { state: { userId: userId } });
+  };
+
   return (
     <>
       <Image></Image>
@@ -18,19 +32,19 @@ export const Choose = () => {
       </div>
       <NavBar></NavBar>
       <section id="Choose">
-       
+
         <article className="ChooseContainer">
           <div>
-            <NavLink className="buttom" to="/CarForm">
+            <button className="buttom" onClick={goToCarForm}>
               <FaCar />
-            </NavLink>
+            </button>
             <p>Driver</p>
           </div>
 
           <div>
-            <NavLink className="buttom" to="/Map">
+            <button className="buttom" onClick={goToMap}>
               <FaPersonWalkingLuggage />
-            </NavLink>
+            </button>
             <p>Passenger</p>
           </div>
         </article>
@@ -41,3 +55,4 @@ export const Choose = () => {
     </>
   );
 };
+

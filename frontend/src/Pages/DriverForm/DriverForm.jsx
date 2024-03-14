@@ -41,10 +41,11 @@ export const DriverForm = () => {
   const navigate = useNavigate(); // Usa useNavigate
   const location = useLocation();
   const carUid = location.state.caruid; // Ahora tienes el ID del vehículo
-
+  const userId = location.state.userId
   const [showFromMap, setShowFromMap] = useState(false);
   const [showToMap, setShowToMap] = useState(false);
 
+  console.log("car id: ", carUid, " user id: ", userId)
   const fromMapRef = useRef(null);
   const toMapRef = useRef(null);
 
@@ -85,6 +86,7 @@ export const DriverForm = () => {
           passengers: passengers,
           extra_info: comment,
           car_uid: carUid,
+          user_id: userId,
         },
       ]);
 
