@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { IoIosArrowBack } from "react-icons/io";
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import { NavBar } from "../../Components/Navbar/navbar";
 import { createClient } from "@supabase/supabase-js";
 import { Image } from "../../Components/BackroundImg/Image";
@@ -66,8 +66,11 @@ export const Details = () => {
     }
   }
 
+  const navigate = useNavigate();
   const location = useLocation();
   const route_id = location.state ? location.state.route_id : null;
+  const userId = location.state.user_id;
+  console.log(userId)
 
   const [route, setRoute] = useState(null);
 
@@ -88,15 +91,15 @@ export const Details = () => {
     <>
       <Image></Image>
       <div className="top">
-        <NavLink to="/Show">
-          <IoIosArrowBack className="icon" />
-        </NavLink>
-        <NavBar></NavBar>
+        <IoIosArrowBack className="icon" onClick={() => navigate("/Show", { state: { userId: userId } })} />
+
+         <NavBar></NavBar>   
       </div>
       <section className="DetailContainer">
-        <NavLink to="/WaitingTrips" id="ChatD">
+        <span id="ChatD" onClick={() => navigate("/Chat", { state: { userId: userId } })} style={{ cursor: "pointer" }}>
           Chat With The Driver
-        </NavLink>
+        </span>
+
         <article id="detailsArticle">
           <div id="topDetail">
             <p>

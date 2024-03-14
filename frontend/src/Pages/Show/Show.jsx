@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { NavLink } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { createClient } from "@supabase/supabase-js";
 import { NavBar } from "../../Components/Navbar/navbar";
 import { IoIosArrowBack } from "react-icons/io";
@@ -53,6 +53,10 @@ async function fetchRoutesAndCars() {
 export const Show = () => {
   const [routes, setRoutes] = useState([]);
   const [openIndex, setOpenIndex] = useState(null);
+  const navigate = useNavigate();
+  const location = useLocation()
+  const userId = location.state.userId
+  console.log(userId)
 
   const handleToggle = (index) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -70,11 +74,9 @@ export const Show = () => {
   return (
     <>
       <div className="top">
-        <NavLink to="/Choose">
-          <IoIosArrowBack className="icon" />
-        </NavLink>
+      <IoIosArrowBack className="icon" onClick={() => navigate("/Map", { state: { userId: userId } })} />
       </div>
-      <NavBar></NavBar>
+       <NavBar></NavBar>   
 
       <section className="Trips">
         <h1 id="Shorter">Available Trips</h1>

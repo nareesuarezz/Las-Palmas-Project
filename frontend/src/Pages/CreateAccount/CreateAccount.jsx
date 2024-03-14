@@ -30,7 +30,6 @@ export const CreateAccount = () => {
   }
 
 
-  console.log(authId)
 
   const [formData, setFormData] = useState({
     name: "",

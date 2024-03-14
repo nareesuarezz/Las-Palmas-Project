@@ -6,7 +6,7 @@ import { createClient } from "@supabase/supabase-js";
 import "leaflet/dist/leaflet.css";
 import { NavBar } from "../../Components/Navbar/navbar";
 import { IoIosArrowBack } from "react-icons/io";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate, useLocation } from "react-router-dom";
 import { BsArrowDownUp } from "react-icons/bs";
 import "./Map.scss";
 
@@ -21,6 +21,10 @@ function parseLocation(locationString) {
 
 export const Map = () => {
   const [routes, setRoutes] = useState([]);
+  const navigate = useNavigate(); // Usa useNavigate
+  const location = useLocation()
+  const userId = location.state.userId
+  console.log(userId)
 
   const MapIcon = new Icon({
     iconUrl: '/images/icon.png',
@@ -53,9 +57,7 @@ export const Map = () => {
   return (
     <>
       <div className="top">
-        <NavLink to="/Choose">
-          <IoIosArrowBack className="icon" />
-        </NavLink>
+        <IoIosArrowBack className="icon" onClick={() => navigate("/Choose", { state: { userId: userId } })} />
       </div>
       <NavBar />
       <div
@@ -112,9 +114,10 @@ export const Map = () => {
           </div>
           <input type="datetime-local" />
         </form>
-        <NavLink className="button" to="/Show">
+        <button className="button" onClick={() => navigate("/Show", { state: { userId: userId } })}>
           Done
-        </NavLink>
+        </button>
+
       </article>
     </>
   );

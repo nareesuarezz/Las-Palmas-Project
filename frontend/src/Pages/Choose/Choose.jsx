@@ -30,9 +30,8 @@ export const Choose = () => {
           <IoIosArrowBack className="icon" />
         </NavLink>
       </div>
-      <NavBar></NavBar>
+       <NavBar></NavBar>   
       <section id="Choose">
-
         <article className="ChooseContainer">
           <div>
             <button className="buttom" onClick={goToCarForm}>

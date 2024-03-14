@@ -56,12 +56,10 @@ export const CarForm = () => {
   return (
     <>
       <div className="top">
-        <NavLink to="/Choose">
-        
-          <IoIosArrowBack className="icon" />
-        </NavLink>
+      <IoIosArrowBack className="icon" onClick={() => navigate("/Choose", { state: { userId: userId } })} />
+
       </div>
-      <NavBar></NavBar>
+       <NavBar></NavBar>   
 
       <section className="DriverForm">
         <form onSubmit={handleSubmit}>
