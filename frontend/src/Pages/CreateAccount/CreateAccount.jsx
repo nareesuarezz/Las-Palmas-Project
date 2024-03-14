@@ -1,6 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { IoIosArrowBack } from "react-icons/io";
+import { useLocation } from "react-router-dom";
 import { createClient } from "@supabase/supabase-js";
 import "./CreateAccount.scss";
 
@@ -12,6 +13,53 @@ const supabase = createClient(
 );
 
 export const CreateAccount = () => {
+  const navigate = useNavigate();
+  const location = useLocation();
+  const userId = location.state.userId;
+  
+  const [formData, setFormData] = useState({
+    name: "",
+    lastName: "",
+    number: "",
+    message: "",
+  });
+
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+
+
+  const handleSubmitt = async (e) => {
+    e.preventDefault();
+
+    try {
+      const { data, error } = await supabase
+        .from("users")
+        .insert([
+          {
+            name: formData.name,
+            last_name: formData.lastName,
+            phone_number: formData.number,
+            description: formData.message,
+            auth_id: userId, //AQUI ES DONDE VA EL AUTENTICADO MONO MONO MONO MONO MONO
+          },
+        ]).select();
+
+      // Si la inserción fue exitosa, navega a la página 'DriverForm'
+      if (!error) {
+        navigate('/DriverForm', { state: { userId } });
+      }
+
+      // ...
+    } catch (error) {
+      console.error("Error:", error);
+    }
+  };
+  
+
   return (
     <>
       <Image></Image>
@@ -21,10 +69,10 @@ export const CreateAccount = () => {
         </NavLink>
         <div className="logo">EcoRide</div>
       </div>
-      <section className="MainC">
-        <h1>Let’s set up your profile</h1>
-        <article>
-          <form>
+      <form onSubmit={handleSubmitt}>
+        <section className="MainC">
+          <h1>Let’s set up your profile</h1>
+          <article>
             <div>
               <input
                 type="text"
@@ -61,9 +109,12 @@ export const CreateAccount = () => {
               ></input>
             </div>
             <button type="submit">Submit</button>
-          </form>
-        </article>
-      </section>
+          </article>
+        </section>
+      </form >
+
+
+
     </>
   );
 };

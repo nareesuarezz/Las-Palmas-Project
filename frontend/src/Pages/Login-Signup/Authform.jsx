@@ -9,32 +9,22 @@ import { Image } from "../../Components/BackroundImg/Image";
 const supabase = createClient('https://gdovlzckdjkuudotrxob.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imdkb3ZsemNrZGprdXVkb3RyeG9iIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDk3MTQ2NTEsImV4cCI6MjAyNTI5MDY1MX0.hgVrFsLYyVwnggB1eJ9oNPcm1wfZPW3ENpwxuZyFFp8')
 
 export const AuthForm = () => {
-    const [session, setSession] = useState(null);
+    const [session, setSession] = useState(null)
     const navigate = useNavigate();
 
     useEffect(() => {
-        supabase.auth.getSession().then(({ data: { session } }) => {
-            if (session) {
-                setSession(session);
-                // Guardar el ID de la sesión en el localStorage
-                localStorage.setItem('auth_id', session.user.id);
-            }
-        });
+      supabase.auth.getSession().then(({ data: { session } }) => {
+        setSession(session)
+      })
 
-        const {
-            data: { subscription },
-        } = supabase.auth.onAuthStateChange((_event, session) => {
-            if (session) {
-                setSession(session);
-                // Guardar el ID de la sesión en el localStorage
-                localStorage.setItem('auth_id', session.user.id);
-            }
-        });
+      const {
+        data: { subscription },
+      } = supabase.auth.onAuthStateChange((_event, session) => {
+        setSession(session)
+      })
 
-        return () => subscription.unsubscribe();
-    }, []);
-
-
+      return () => subscription.unsubscribe()
+    }, [])
 
     if (!session) {
         return (
