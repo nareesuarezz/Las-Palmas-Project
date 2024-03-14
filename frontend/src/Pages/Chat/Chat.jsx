@@ -34,8 +34,8 @@ export const Chat = () => {
 
     if (error) console.log('Error: ', error)
     else {
-      setNewMessage('') // Esto asegura que newMessage nunca se establezca en undefined
-      fetchMessages() // Vuelve a buscar los mensajes después de enviar un nuevo mensaje
+      setNewMessage()
+      fetchMessages() 
     }
   }
 
