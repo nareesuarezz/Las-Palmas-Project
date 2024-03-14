@@ -19,6 +19,7 @@ export const CreateAccount = () => {
     supabase.auth.getUser()
       .then(session => {
         console.log(session.data.user.id);
+        authId = session.data.user.id
       })
       .catch(error => {
         console.error("Error:", error);
