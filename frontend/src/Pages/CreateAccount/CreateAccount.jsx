@@ -9,11 +9,23 @@ import { Image } from "../../Components/BackroundImg/Image";
 
 const supabase = createClient('https://hyjkqodxeienwesmnalj.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh5amtxb2R4ZWllbndlc21uYWxqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA0MDY5MzYsImV4cCI6MjAyNTk4MjkzNn0.pQeTd7zxmI8U67FUYepdZF4NWicXecjAZ2-GvQMgMoc')
 
-export const CreateAccount = async () => {
+export const CreateAccount = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
   const authId = localStorage.getItem('userId');
+
+  if (authId === null || authId === "") {
+    supabase.auth.getUser()
+      .then(session => {
+        console.log(session.data.user.id);
+      })
+      .catch(error => {
+        console.error("Error:", error);
+      });
+  }
+
+
   console.log(authId)
 
   const [formData, setFormData] = useState({
@@ -43,7 +55,7 @@ export const CreateAccount = async () => {
             description: formData.message,
             auth_id: authId,
           },
-        ]).select();
+        ]);
 
       if (!error) {
         navigate('/Choose');
