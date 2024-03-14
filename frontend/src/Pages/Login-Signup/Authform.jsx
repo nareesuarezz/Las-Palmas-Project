@@ -5,6 +5,7 @@ import { IoIosArrowBack } from "react-icons/io";
 import { createClient } from "@supabase/supabase-js";
 import { Auth } from "@supabase/auth-ui-react";
 import "../CreateAccount/CreateAccount.scss";
+import { Image } from "../../Components/BackroundImg/Image";
 
 const supabase = createClient(
   "https://gdovlzckdjkuudotrxob.supabase.co",
@@ -32,31 +33,46 @@ export const AuthForm = () => {
   if (!session) {
     return (
       <>
+        <Image />
+        <div className="logo">EcoRide</div>
         <div className="top">
           <NavLink to="/Welcome">
             <IoIosArrowBack className="icon" />
           </NavLink>
         </div>
+
         <section className="MainC">
-          <h1>LogIn/SignUp</h1>
+          <h1>Log In Sign Up</h1>
           <Auth
             supabaseClient={supabase}
             appearance={{
               style: {
-                button: {
-                  width: "220px",
-                  height: "30px",
-                  borderRadius: "5px",
-                  border: "none",
-                  background: "#d5d5d5",
+                label: {
+                  display: "none",
                 },
                 input: {
-                  width: "280px",
-                  height: "30px",
+                  width: "300px",
                   padding: "20px",
-                  border: "none",
-                  background: "#d5d5d5",
+                  border: "1px solid #25841c",
                   borderRadius: "5px",
+                  backgroundColor: "white",
+                  opacity: "0.6",
+                  fontFamily: "Roboto",
+                },
+                button: {
+                  width: "300px",
+                  padding: "20px",
+                  display: "flex",
+                  justifyContent: "center",
+                  alignitems: "center",
+                  backgroundColor: "#25841c",
+                  color: "white",
+                  border: "none",
+                  borderRadius: "5px",
+                  fontFamily: "Roboto",
+                },
+                anchor: {
+                  fontFamily: "Roboto",
                 },
               },
             }}
