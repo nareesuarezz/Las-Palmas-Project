@@ -14,7 +14,9 @@ export const CreateAccount = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const authId = localStorage.getItem('userId');
+  let authId
+
+  authId = localStorage.getItem('userId');
 
   if (authId === null || authId === "") {
     supabase.auth.getUser()
@@ -46,7 +48,7 @@ export const CreateAccount = () => {
 
   const handleSubmitt = async (e) => {
     e.preventDefault();
-  
+
     try {
       const { error: insertError } = await supabase
         .from("users")
@@ -59,7 +61,7 @@ export const CreateAccount = () => {
             auth_id: authId,
           },
         ]);
-  
+
       if (insertError) {
         console.error("Error:", insertError);
       } else {
@@ -70,7 +72,7 @@ export const CreateAccount = () => {
           .order('user_id', { ascending: false })
           .limit(1)
           .single();
-  
+
         if (selectError) {
           console.error("Error: ", selectError);
         } else {
@@ -79,7 +81,7 @@ export const CreateAccount = () => {
           navigate('/Choose', { state: { userId: userData.user_id } }); // Pasa el ID del usuario a la siguiente página
         }
       }
-  
+
     } catch (error) {
       console.error("Error:", error);
     }
