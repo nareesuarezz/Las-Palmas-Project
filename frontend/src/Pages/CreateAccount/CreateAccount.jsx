@@ -13,13 +13,8 @@ export const CreateAccount = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  let auth_id;
-  const [user, setUser] = useState(null);
-
-  useEffect(() => {
-    auth_id = setUser(supabase.auth.user.id())
-  }, [])
-
+  const authId = localStorage.getItem('userId');
+  console.log(authId)
 
   const [formData, setFormData] = useState({
     name: "",
@@ -48,12 +43,12 @@ export const CreateAccount = () => {
             last_name: formData.lastName,
             phone_number: formData.number,
             description: formData.message,
-            auth_id: auth_id,
+            auth_id: authId,
           },
         ]).select();
 
       if (!error) {
-        navigate('/DriverForm', { state: { auth_id } });
+        navigate('/Choose');
       }
 
     } catch (error) {
@@ -82,6 +77,8 @@ export const CreateAccount = () => {
                 name="name"
                 placeholder="Name"
                 required
+                value={formData.name}
+                onChange={handleInputChange}
               ></input>
             </div>
             <div>
@@ -91,6 +88,8 @@ export const CreateAccount = () => {
                 name="lastName"
                 placeholder="LastName"
                 required
+                value={formData.lastName}
+                onChange={handleInputChange}
               ></input>
             </div>
             <div>
@@ -100,6 +99,8 @@ export const CreateAccount = () => {
                 name="number"
                 placeholder="Phone Number"
                 required
+                value={formData.number}
+                onChange={handleInputChange}
               ></input>
             </div>
             <div>
@@ -108,6 +109,8 @@ export const CreateAccount = () => {
                 id="Message"
                 name="message"
                 placeholder="Description"
+                value={formData.message}
+                onChange={handleInputChange}
               ></input>
             </div>
             <button type="submit">Submit</button>
