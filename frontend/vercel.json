@@ -1,9 +1,5 @@
 {
-    "rewrites": [
-      { "source": "/", "destination": "/index.html" },
-      { "source": "/policy", "destination": "/index.html" },
-      { "source": "/Auth", "destination": "/index.html" },
-      { "source": "/Create", "destination": "/index.html" }
-    ]
-  }
-  
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ]
+}
