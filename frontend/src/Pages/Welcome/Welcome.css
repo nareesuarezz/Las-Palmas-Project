@@ -6,6 +6,11 @@
   font-family: Roboto-aLight;
   src: url(../../Assest/Roboto-Light.ttf);
 }
+span {
+  display: flex;
+  align-items: center;
+}
+
 .Welcome {
   display: flex;
   flex-direction: column;
@@ -31,6 +36,7 @@
   height: 111px;
   margin-top: 240px;
   bottom: 140px;
+  gap: 10px;
 }
 .Welcome .madeLogin .create {
   color: black;
@@ -41,6 +47,7 @@
   width: 300px;
   display: flex;
   align-items: center;
+  justify-content: start; /* Align content horizontally to the center */
   background-color: green;
   text-decoration: none;
   color: white;
@@ -48,9 +55,8 @@
   font-size: 16px;
   padding: 7px 45px 7px 35px;
   border-radius: 5px;
-  margin-top: 15px;
 }
 .Welcome .madeLogin .link .icon {
   font-size: 30px;
-  margin-right: auto;
+  margin-right: 10px;
 }/*# sourceMappingURL=Welcome.css.map */

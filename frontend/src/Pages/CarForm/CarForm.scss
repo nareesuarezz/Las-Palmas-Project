@@ -1,6 +1,35 @@
 .DriverForm {
   display: flex;
-  justify-content: center;
   flex-direction: column;
   align-items: center;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+input[type="text"] {
+  width: 300px;
+  padding: 20px;
+  border: 1px solid #25841c;
+  border-radius: 5px;
+  background-color: rgba($color: #fff, $alpha: 0.6);
+}
+
+button[type="submit"] {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #25841c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
 }

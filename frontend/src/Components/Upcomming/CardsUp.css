@@ -1,0 +1,15 @@
+.upcom {
+  display: flex;
+  color: white;
+  border-bottom: 1px solid white;
+  justify-content: space-between;
+  padding: 20px;
+}
+.upcom div {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.upcom div .WhiteLink {
+  color: white;
+}/*# sourceMappingURL=CardsUp.css.map */

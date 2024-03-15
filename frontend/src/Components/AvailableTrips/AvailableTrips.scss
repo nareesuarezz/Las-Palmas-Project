@@ -13,11 +13,12 @@
 .rightPick {
   display: flex;
   align-items: center;
+
   p {
     border-bottom: 1px solid black;
     display: block;
-    font-family:"Roboto-Light";
-    }
+    font-family: "Roboto-Light";
+  }
   p.Active {
     display: none;
   }
@@ -46,20 +47,19 @@
     height: 170px;
     padding: 20px;
     right: 20px;
-    text-align: start;
+    text-align: end;
     font-size: 23px;
     border-radius: 10px;
-    font-family:"Roboto-Light";
+    font-family: "Roboto-Light";
 
     a {
       text-decoration: none;
       color: white;
     }
   }
-  
 }
-.LeftPick{
-   p {
+.LeftPick {
+  p {
     font-family: "Roboto-Light";
-   }
   }
+}
