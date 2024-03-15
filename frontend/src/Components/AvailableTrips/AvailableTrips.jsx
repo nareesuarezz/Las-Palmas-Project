@@ -19,6 +19,9 @@ export const AvailableTrips = ({ handleToggle, openIndex, index, route }) => {
   const handleMapClick = () => {
     navigate("/Map", { state: { user_id: userId } });
   };
+  const handleAddClick = () => {
+    navigate("/Upcoming", { state: { user_id: userId } });
+  };
   const isOpen = openIndex === index;
   console.log("rutas ", route.route_id);
   const date = new Date(route.date);
@@ -61,7 +64,7 @@ export const AvailableTrips = ({ handleToggle, openIndex, index, route }) => {
                 Map
               </NavLink>
             </li>
-            <li>
+            <li onClick={handleAddClick}>
               <NavLink className="ShowL" to="/Upcoming">
                 Add
               </NavLink>
