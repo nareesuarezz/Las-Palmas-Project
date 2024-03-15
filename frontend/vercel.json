@@ -1,8 +1,9 @@
 {
     "rewrites": [
-        { "src": "/", "dest": "/" },
-        { "src": "/Welcome", "dest": "/" },
-        { "src": "/Choose", "dest": "/" }
+      { "source": "/", "destination": "/index.html" },
+      { "source": "/Policy", "destination": "/index.html" },
+      { "source": "/Auth", "destination": "/index.html" },
+      { "source": "/Create", "destination": "/index.html" }
     ]
   }
   
