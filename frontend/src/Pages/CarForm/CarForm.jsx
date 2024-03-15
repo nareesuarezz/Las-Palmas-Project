@@ -3,10 +3,14 @@ import { createClient } from "@supabase/supabase-js";
 import { NavBar } from "../../Components/Navbar/navbar";
 import { IoIosArrowBack } from "react-icons/io";
 import { NavLink, useNavigate } from "react-router-dom";
+import { Image } from "../../Components/BackroundImg/Image";
 import "./CarForm.scss";
 import { useLocation } from "react-router-dom";
 
-const supabase = createClient('https://hyjkqodxeienwesmnalj.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh5amtxb2R4ZWllbndlc21uYWxqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA0MDY5MzYsImV4cCI6MjAyNTk4MjkzNn0.pQeTd7zxmI8U67FUYepdZF4NWicXecjAZ2-GvQMgMoc')
+const supabase = createClient(
+  "https://hyjkqodxeienwesmnalj.supabase.co",
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh5amtxb2R4ZWllbndlc21uYWxqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA0MDY5MzYsImV4cCI6MjAyNTk4MjkzNn0.pQeTd7zxmI8U67FUYepdZF4NWicXecjAZ2-GvQMgMoc"
+);
 
 export const CarForm = () => {
   const [model, setModel] = useState("");
@@ -16,7 +20,7 @@ export const CarForm = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const userId = location.state.userId;
-  console.log(userId)
+  console.log(userId);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -28,19 +32,17 @@ export const CarForm = () => {
 
     const { error: insertError } = await supabase
       .from("carinfo")
-      .insert([
-        { model: model, licenseplate: licensePlate },
-      ]);
+      .insert([{ model: model, licenseplate: licensePlate }]);
 
     if (insertError) {
       console.error("Error: ", insertError);
     } else {
       const { data: carData, error: selectError } = await supabase
-        .from('carinfo')
-        .select('caruid')
-        .eq('model', model)
-        .eq('licenseplate', licensePlate)
-        .order('caruid', { ascending: false })
+        .from("carinfo")
+        .select("caruid")
+        .eq("model", model)
+        .eq("licenseplate", licensePlate)
+        .order("caruid", { ascending: false })
         .limit(1)
         .single();
 
@@ -48,20 +50,30 @@ export const CarForm = () => {
         console.error("Error: ", selectError);
       } else {
         setCarUid(carData.caruid); // Guardamos el carUid en el estado
-        console.log("Car info inserted successfully: ", "Car uid: ", carData.caruid);
-        navigate("/DriverForm", { state: { caruid: carData.caruid, userId: userId } });
+        console.log(
+          "Car info inserted successfully: ",
+          "Car uid: ",
+          carData.caruid
+        );
+        navigate("/DriverForm", {
+          state: { caruid: carData.caruid, userId: userId },
+        });
       }
     }
   };
   return (
     <>
+      <Image></Image>
       <div className="top">
-      <IoIosArrowBack className="icon" onClick={() => navigate("/Choose", { state: { userId: userId } })} />
-
+        <IoIosArrowBack
+          className="icon"
+          onClick={() => navigate("/Choose", { state: { userId: userId } })}
+        />
       </div>
-       <NavBar></NavBar>   
+      <NavBar></NavBar>
 
       <section className="DriverForm">
+        <h1>Registraion</h1>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
             <input
@@ -87,7 +99,7 @@ export const CarForm = () => {
           </div>
           {errorMessage && <p>{errorMessage}</p>}
           <div className="form-group">
-            <button type="submit" >Submit</button>
+            <button type="submit">Submit</button>
           </div>
         </form>
       </section>

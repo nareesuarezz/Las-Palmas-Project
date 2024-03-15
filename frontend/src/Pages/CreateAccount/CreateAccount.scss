@@ -22,7 +22,7 @@
 
 Form {
   display: flex;
-  justify-content: space-between;
+  gap: 10px;
   flex-direction: column;
   height: 400px;
   margin-top: 130px;
@@ -34,12 +34,12 @@ Form {
     padding-top: 0;
   }
   input {
-    width: 280px;
+    width: 300px;
     height: 30px;
     padding: 20px;
-    background-color: #d5d5d5;
+    background-color: rgba($color: #fff, $alpha: 0.6);
     border-radius: 5px;
-    border: 2px solid green;
+    border: 1px solid #25841c;
   }
   button {
     width: 220px;

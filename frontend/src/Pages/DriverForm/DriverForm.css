@@ -3,4 +3,42 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
+}
+.DriverForm h2 {
+  margin-top: 100px;
+  font-size: 30px;
+  margin-bottom: -80px;
+}
+.DriverForm .stayDown {
+  position: absolute;
+  bottom: 220px;
+}
+.DriverForm input[type=number] {
+  width: 300px;
+  padding: 20px;
+  border: 1px solid #25841c;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+.DriverForm input[type=time] {
+  width: 300px;
+  padding: 20px;
+  border: 1px solid #25841c;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+.DriverForm input[type=date] {
+  width: 300px;
+  padding: 20px;
+  border: 1px solid #25841c;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+.DriverForm textarea {
+  width: 300px;
+  height: 90px;
+  border: 1px solid #25841c;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.6);
+  padding: 10px;
 }/*# sourceMappingURL=DriverForm.css.map */

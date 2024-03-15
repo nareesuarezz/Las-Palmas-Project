@@ -8,10 +8,15 @@ import { useLocation } from "react-router-dom";
 import "./DriverForm.scss";
 import { Image } from "../../Components/BackroundImg/Image";
 
-const supabase = createClient('https://hyjkqodxeienwesmnalj.supabase.co', 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh5amtxb2R4ZWllbndlc21uYWxqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA0MDY5MzYsImV4cCI6MjAyNTk4MjkzNn0.pQeTd7zxmI8U67FUYepdZF4NWicXecjAZ2-GvQMgMoc')
+const supabase = createClient(
+  "https://hyjkqodxeienwesmnalj.supabase.co",
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh5amtxb2R4ZWllbndlc21uYWxqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MTA0MDY5MzYsImV4cCI6MjAyNTk4MjkzNn0.pQeTd7zxmI8U67FUYepdZF4NWicXecjAZ2-GvQMgMoc"
+);
 
 async function fetchLocationName(lat, lon) {
-  const response = await fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`);
+  const response = await fetch(
+    `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`
+  );
   const data = await response.json();
   return data.display_name;
 }
@@ -41,11 +46,11 @@ export const DriverForm = () => {
   const navigate = useNavigate(); // Usa useNavigate
   const location = useLocation();
   const carUid = location.state.caruid; // Ahora tienes el ID del vehículo
-  const userId = location.state.userId
+  const userId = location.state.userId;
   const [showFromMap, setShowFromMap] = useState(false);
   const [showToMap, setShowToMap] = useState(false);
 
-  console.log("car id: ", carUid, " user id: ", userId)
+  console.log("car id: ", carUid, " user id: ", userId);
   const fromMapRef = useRef(null);
   const toMapRef = useRef(null);
 
@@ -76,25 +81,23 @@ export const DriverForm = () => {
 
     const date = `${pickDate} ${pickTime}`;
 
-    const { data, error } = await supabase
-      .from("routeinfo")
-      .insert([
-        {
-          fromlocation: fromLocation,
-          tolocation: toLocation,
-          date: date,
-          passengers: passengers,
-          extra_info: comment,
-          car_uid: carUid,
-          user_id: userId,
-        },
-      ]);
+    const { data, error } = await supabase.from("routeinfo").insert([
+      {
+        fromlocation: fromLocation,
+        tolocation: toLocation,
+        date: date,
+        passengers: passengers,
+        extra_info: comment,
+        car_uid: carUid,
+        user_id: userId,
+      },
+    ]);
 
     if (error) {
       console.error("Error: ", error);
     } else {
       console.log("Route info inserted successfully: ", carUid);
-      navigate("/WaitingTrips", { state: { userId: userId } })
+      navigate("/DriverWait", { state: { userId: userId } });
     }
   };
 
@@ -102,12 +105,16 @@ export const DriverForm = () => {
     <>
       <Image></Image>
       <div className="top">
-      <IoIosArrowBack className="icon" onClick={() => navigate("/Choose", { state: { userId: userId } })} />
+        <IoIosArrowBack
+          className="icon"
+          onClick={() => navigate("/Choose", { state: { userId: userId } })}
+        />
       </div>
-       <NavBar></NavBar>   
+      <NavBar></NavBar>
 
       <section className="DriverForm">
-        <form onSubmit={handleSubmit}>
+        <h2>Set your trip</h2>
+        <form className="stayDown" onSubmit={handleSubmit}>
           <div className="form-group">
             <input
               type="text"
@@ -121,12 +128,19 @@ export const DriverForm = () => {
           </div>
           {showFromMap && (
             <div ref={fromMapRef}>
-              <MapContainer center={[64.1355, -21.8954]} zoom={12} style={{ height: "300px", width: "300px" }}>
+              <MapContainer
+                center={[64.1355, -21.8954]}
+                zoom={12}
+                style={{ height: "300px", width: "300px" }}
+              >
                 <TileLayer
                   url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                   attribution='© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 />
-                <LocationPicker setLocation={setFromLocation} setLocationName={setFromLocationName} />
+                <LocationPicker
+                  setLocation={setFromLocation}
+                  setLocationName={setFromLocationName}
+                />
               </MapContainer>
             </div>
           )}
@@ -143,12 +157,19 @@ export const DriverForm = () => {
           </div>
           {showToMap && (
             <div ref={toMapRef}>
-              <MapContainer center={[64.1355, -21.8954]} zoom={12} style={{ height: "300px", width: "300px" }}>
+              <MapContainer
+                center={[64.1355, -21.8954]}
+                zoom={12}
+                style={{ height: "300px", width: "300px" }}
+              >
                 <TileLayer
                   url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                   attribution='© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                 />
-                <LocationPicker setLocation={setToLocation} setLocationName={setToLocationName} />
+                <LocationPicker
+                  setLocation={setToLocation}
+                  setLocationName={setToLocationName}
+                />
               </MapContainer>
             </div>
           )}
