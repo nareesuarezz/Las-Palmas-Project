@@ -1,6 +1,8 @@
 {
     "rewrites": [
-      { "source": "/(.*)", "destination": "/index.html" }
+        { "src": "/", "dest": "/" },
+        { "src": "/Welcome", "dest": "/" },
+        { "src": "/Choose", "dest": "/" }
     ]
   }
   
